@@ -1,11 +1,25 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Demineur</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 </head>
 <body>
-    HELLO WORLD
+    <header class="bg-gray-500 flex items-center justify-center">
+        <div id="timerDisplay">00 min:00 s</div>
+        <ul id="difficulty_choisie" style="display: none;"></ul>
+        <ul id="difficulty">
+            <button onclick="difficulty(1)">Débutant : 9x9 cases, 10 bombes</button>
+            <button onclick="difficulty(2)">Intermédiaire : 16x16 cases, 40 bombes</button>
+            <button onclick="difficulty(3)">Expert : 22x22 cases, 100 bombes</button>
+            <button onclick="difficulty(4)">Maître : 30x30 cases, 250 bombes</button>
+        </ul>
+        <button id="start" onclick="start_game()"  style="display: none;"> Lancer le jeu</button>
+    </header>
+    <div id="demineur_grid" class="bg-gray-900 text-white flex items-center justify-center h-screen justify-between mb-4">
+        
+    </div>
 </body>
 </html>
+    <script src="index.js"></script>
