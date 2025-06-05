@@ -1,764 +1,1612 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nathanaël LEJUSTE Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body class="bg-gray-50 font-sans">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+  <body class="bg-gray-50 font-sans">
     <!-- Navigation -->
     <nav class="bg-blue-600 text-white shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <i class="fas fa-code text-2xl"></i>
-                <span class="text-xl font-bold">Nathanaël LEJUSTE Portfolio SLAM</span>
-            </div>
-            <div class="hidden md:flex space-x-6">
-                <a href="#presentation" class="hover:text-blue-200 transition">Présentation</a>
-                <a href="#competences" class="hover:text-blue-200 transition">Compétences</a>
-                <a href="#projets" class="hover:text-blue-200 transition">Projets</a>
-                <a href="#veille" class="hover:text-blue-200 transition">Veille</a>
-                <a href="#contact" class="hover:text-blue-200 transition">Contact</a>
-            </div>
-            <button class="md:hidden focus:outline-none" id="menu-btn">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
+      <div
+        class="container mx-auto px-4 py-3 flex justify-between items-center"
+      >
+        <div class="flex items-center space-x-2">
+          <i class="fas fa-code text-2xl"></i>
+          <span class="text-xl font-bold"
+            >Nathanaël LEJUSTE Portfolio SLAM</span
+          >
         </div>
-        <!-- Mobile menu -->
-        <div class="md:hidden hidden bg-blue-700 px-4 py-2" id="mobile-menu">
-            <a href="#presentation" class="block py-2 hover:text-blue-200 transition">Présentation</a>
-            <a href="#competences" class="block py-2 hover:text-blue-200 transition">Compétences</a>
-            <a href="#projets" class="block py-2 hover:text-blue-200 transition">Projets</a>
-            <a href="#veille" class="block py-2 hover:text-blue-200 transition">Veille</a>
-            <a href="#contact" class="block py-2 hover:text-blue-200 transition">Contact</a>
+        <div class="hidden md:flex space-x-6">
+          <a href="#presentation" class="hover:text-blue-200 transition"
+            >Présentation</a
+          >
+          <a href="#competences" class="hover:text-blue-200 transition"
+            >Compétences</a
+          >
+          <a href="#projets" class="hover:text-blue-200 transition">Projets</a>
+          <a href="#veille" class="hover:text-blue-200 transition">Veille</a>
+          <a href="#contact" class="hover:text-blue-200 transition">Contact</a>
         </div>
+        <button class="md:hidden focus:outline-none" id="menu-btn">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+      <!-- Mobile menu -->
+      <div class="md:hidden hidden bg-blue-700 px-4 py-2" id="mobile-menu">
+        <a
+          href="#presentation"
+          class="block py-2 hover:text-blue-200 transition"
+          >Présentation</a
+        >
+        <a href="#competences" class="block py-2 hover:text-blue-200 transition"
+          >Compétences</a
+        >
+        <a href="#projets" class="block py-2 hover:text-blue-200 transition"
+          >Projets</a
+        >
+        <a href="#veille" class="block py-2 hover:text-blue-200 transition"
+          >Veille</a
+        >
+        <a href="#contact" class="block py-2 hover:text-blue-200 transition"
+          >Contact</a
+        >
+      </div>
     </nav>
 
     <!-- Page de garde -->
     <header class="bg-gradient-to-r from-blue-500 to-blue-700 text-white py-20">
-        <div class="container mx-auto px-4 text-center">
-            <div class="flex justify-center mb-6">
-                <div class="bg-white rounded-full p-2 shadow-xl">
-                    <i class="fas fa-code text-6xl text-blue-600"></i>
-                </div>
-            </div>
-            <h1 class="text-4xl md:text-5xl font-bold mb-2">Nathanaël LEJUSTE</h1>
-            <h2 class="text-2xl md:text-3xl font-semibold mb-4">Portfolio - BTS SIO option SLAM</h2>
-            <p class="text-xl mb-8">Année scolaire 2024-2025</p>
-            <div class="flex justify-center space-x-4">
-                <a href="mailto:nathanael.lejuste@gmail.com" target="_blank" class="bg-white text-blue-600 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition">
-                    <i class="fas fa-envelope mr-2"></i>Email
-                </a>
-                <a href="https://www.linkedin.com/in/nathana%C3%ABl-lejuste/" target="_blank" class="bg-blue-800 text-white px-6 py-2 rounded-full font-medium hover:bg-blue-900 transition">
-                <i class="fab fa-linkedin mr-2"></i>LinkedIn
-                </a>
-                <a href="https://github.com/StonksInd" target="_blank" class="bg-gray-800 text-white px-6 py-2 rounded-full font-medium hover:bg-gray-900 transition">
-                    <i class="fab fa-github mr-2"></i>GitHub
-                </a>
-            </div>
+      <div class="container mx-auto px-4 text-center">
+        <div class="flex justify-center mb-6">
+          <div class="bg-white rounded-full p-2 shadow-xl">
+            <i class="fas fa-code text-6xl text-blue-600"></i>
+          </div>
         </div>
+        <h1 class="text-4xl md:text-5xl font-bold mb-2">Nathanaël LEJUSTE</h1>
+        <h2 class="text-2xl md:text-3xl font-semibold mb-4">
+          Portfolio - BTS SIO option SLAM
+        </h2>
+        <p class="text-xl mb-8">Année scolaire 2024-2025</p>
+        <div class="flex justify-center space-x-4">
+          <a
+            href="mailto:nathanael.lejuste@gmail.com"
+            target="_blank"
+            class="bg-white text-blue-600 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition"
+          >
+            <i class="fas fa-envelope mr-2"></i>Email
+          </a>
+          <a
+            href="https://www.linkedin.com/in/nathana%C3%ABl-lejuste/"
+            target="_blank"
+            class="bg-blue-800 text-white px-6 py-2 rounded-full font-medium hover:bg-blue-900 transition"
+          >
+            <i class="fab fa-linkedin mr-2"></i>LinkedIn
+          </a>
+          <a
+            href="https://github.com/StonksInd"
+            target="_blank"
+            class="bg-gray-800 text-white px-6 py-2 rounded-full font-medium hover:bg-gray-900 transition"
+          >
+            <i class="fab fa-github mr-2"></i>GitHub
+          </a>
+        </div>
+      </div>
     </header>
 
     <!-- Présentation personnelle -->
     <section id="presentation" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-blue-600">Présentation personnelle</h2>
-            
-            <div class="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Mon parcours</h3>
-                    <p class="text-gray-600 mb-6">
-                        Après avoir obtenu mon bac général spécialité Physique Chimie et NSI, 
-                        j'ai choisi de m'orienter vers le BTS SIO option SLAM pour avoir un diplôme en plus. 
-                        Cette formation correspond parfaitement à mon intérêt pour l'informatique.
-                    </p>
-                    
-                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Pourquoi SLAM ?</h3>
-                    <p class="text-gray-600 mb-6">
-                        J'ai choisi la spécialité SLAM car je suis passionné par le développement logiciel et la création de solutions informatiques. 
-                        J'apprécie particulièrement l'algorithmie.
-                    </p>
-                </div>
-                
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Mes soft skills</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-center space-x-3">
-                            <i class="fas fa-users text-blue-600 text-xl"></i>
-                            <h4 class="font-medium text-gray-700">Esprit d'équipe</h4>
-                        </div>
-                        <div class="flex items-center space-x-3">
-                            <i class="fas fa-sync-alt text-blue-600 text-xl"></i>
-                            <h4 class="font-medium text-gray-700">Capacité d'adaptation</h4>
-                        </div>
-                        <div class="flex items-center space-x-3">
-                            <i class="fas fa-comments text-blue-600 text-xl"></i>
-                            <h4 class="font-medium text-gray-700">Communication</h4>
-                        </div>
-                        <div class="flex items-center space-x-3">
-                            <i class="fas fa-handshake text-blue-600 text-xl"></i>
-                            <h4 class="font-medium text-gray-700">Travail d'équipe</h4>
-                        </div>
-                    </div>
-                    
-                    <h3 class="text-2xl font-semibold mt-8 mb-4 text-gray-800">Vision du métier</h3>
-                    <p class="text-gray-600">
-                        À terme, je souhaite devenir Developpeur. 
-                        Je m'intéresse particulièrement à l'informatique quantique.
-                    </p>
-                </div>
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-blue-600">
+          Présentation personnelle
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h3 class="text-2xl font-semibold mb-4 text-gray-800">
+              Mon parcours
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Après avoir obtenu mon bac général spécialité Physique Chimie et
+              NSI, j'ai choisi de m'orienter vers le BTS SIO option SLAM pour
+              avoir un diplôme en plus. Cette formation correspond parfaitement
+              à mon intérêt pour l'informatique.
+            </p>
+
+            <h3 class="text-2xl font-semibold mb-4 text-gray-800">
+              Pourquoi SLAM ?
+            </h3>
+            <p class="text-gray-600 mb-6">
+              J'ai choisi la spécialité SLAM car je suis passionné par le
+              développement logiciel et la création de solutions informatiques.
+              J'apprécie particulièrement l'algorithmie.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+            <h3 class="text-2xl font-semibold mb-4 text-gray-800">
+              Mes soft skills
+            </h3>
+            <div class="space-y-4">
+              <div class="flex items-center space-x-3">
+                <i class="fas fa-users text-blue-600 text-xl"></i>
+                <h4 class="font-medium text-gray-700">Esprit d'équipe</h4>
+              </div>
+              <div class="flex items-center space-x-3">
+                <i class="fas fa-sync-alt text-blue-600 text-xl"></i>
+                <h4 class="font-medium text-gray-700">Capacité d'adaptation</h4>
+              </div>
+              <div class="flex items-center space-x-3">
+                <i class="fas fa-comments text-blue-600 text-xl"></i>
+                <h4 class="font-medium text-gray-700">Communication</h4>
+              </div>
+              <div class="flex items-center space-x-3">
+                <i class="fas fa-handshake text-blue-600 text-xl"></i>
+                <h4 class="font-medium text-gray-700">Travail d'équipe</h4>
+              </div>
             </div>
-            
-            <div class="mt-12 bg-blue-50 p-6 rounded-lg">
-                <h3 class="text-xl font-semibold text-blue-600 mb-4">Compétences BTS mobilisées</h3>
-                <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
-                        <span>Gérer son identité professionnelle</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
-                        <span>Développer son projet professionnel</span>
-                    </li>
-                </ul>
-            </div>
+
+            <h3 class="text-2xl font-semibold mt-8 mb-4 text-gray-800">
+              Vision du métier
+            </h3>
+            <p class="text-gray-600">
+              À terme, je souhaite devenir Developpeur. Je m'intéresse
+              particulièrement à l'informatique quantique.
+            </p>
+          </div>
         </div>
+
+        <div class="mt-12 bg-blue-50 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold text-blue-600 mb-4">
+            Compétences BTS mobilisées
+          </h3>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
+            <li class="flex items-start">
+              <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+              <span>Gérer son identité professionnelle</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+              <span>Développer son projet professionnel</span>
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <!-- Compétences techniques -->
     <section id="competences" class="py-16 bg-gray-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-blue-600">Compétences techniques & outils</h2>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Langages -->
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <div class="flex items-center mb-4">
-                        <i class="fas fa-code text-2xl text-blue-500 mr-3"></i>
-                        <h3 class="text-xl font-semibold">Langages</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">HTML/CSS</span>
-                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">JavaScript</span>
-                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">PHP</span>
-                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">SQL</span>
-                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Java</span>
-                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Python</span>
-                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Bash</span>
-                    </div>
-                </div>
-                
-                <!-- Frameworks -->
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <div class="flex items-center mb-4">
-                        <i class="fas fa-cubes text-2xl text-blue-500 mr-3"></i>
-                        <h3 class="text-xl font-semibold">Frameworks</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">React</span>
-                    </div>
-                </div>
-                
-                <!-- Outils -->
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <div class="flex items-center mb-4">
-                        <i class="fas fa-tools text-2xl text-blue-500 mr-3"></i>
-                        <h3 class="text-xl font-semibold">Outils</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Git</span>
-                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">GitHub</span>
-                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">VS Code</span>
-                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">MySQL</span>
-                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">SQL serveur</span>
-                        
-                    </div>
-                </div>
-                
-                <!-- Environnements -->
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <div class="flex items-center mb-4">
-                        <i class="fas fa-desktop text-2xl text-blue-500 mr-3"></i>
-                        <h3 class="text-xl font-semibold">Environnements</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Windows</span>
-                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Linux</span>
-                    </div>
-                </div>
-                
-                <!-- Méthodologies -->
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <div class="flex items-center mb-4">
-                        <i class="fas fa-project-diagram text-2xl text-blue-500 mr-3"></i>
-                        <h3 class="text-xl font-semibold">Méthodologies</h3>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">UML</span>
-                    </div>
-                </div>
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-blue-600">
+          Compétences techniques & outils
+        </h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Langages -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+              <i class="fas fa-code text-2xl text-blue-500 mr-3"></i>
+              <h3 class="text-xl font-semibold">Langages</h3>
             </div>
-            
-            <div class="mt-12 bg-blue-50 p-6 rounded-lg">
-                <h3 class="text-xl font-semibold text-blue-600 mb-4">Compétences BTS mobilisées</h3>
-                <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
-                        <span>Mettre en place son environnement d'apprentissage personnel</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
-                        <span>Mettre en œuvre des outils et stratégies de veille informationnelle</span>
-                    </li>
-                </ul>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                >HTML/CSS</span
+              >
+              <span
+                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                >JavaScript</span
+              >
+              <span
+                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                >PHP</span
+              >
+              <span
+                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                >SQL</span
+              >
+              <span
+                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                >Java</span
+              >
+              <span
+                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                >Python</span
+              >
+              <span
+                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                >Bash</span
+              >
             </div>
+          </div>
+
+          <!-- Frameworks -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+              <i class="fas fa-cubes text-2xl text-blue-500 mr-3"></i>
+              <h3 class="text-xl font-semibold">Frameworks</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                >React</span
+              >
+            </div>
+          </div>
+
+          <!-- Outils -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+              <i class="fas fa-tools text-2xl text-blue-500 mr-3"></i>
+              <h3 class="text-xl font-semibold">Outils</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                >Git</span
+              >
+              <span
+                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                >GitHub</span
+              >
+              <span
+                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                >VS Code</span
+              >
+              <span
+                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                >MySQL</span
+              >
+              <span
+                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                >SQL serveur</span
+              >
+            </div>
+          </div>
+
+          <!-- Environnements -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+              <i class="fas fa-desktop text-2xl text-blue-500 mr-3"></i>
+              <h3 class="text-xl font-semibold">Environnements</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                >Windows</span
+              >
+              <span
+                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                >Linux</span
+              >
+            </div>
+          </div>
+
+          <!-- Méthodologies -->
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-center mb-4">
+              <i class="fas fa-project-diagram text-2xl text-blue-500 mr-3"></i>
+              <h3 class="text-xl font-semibold">Méthodologies</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                >UML</span
+              >
+            </div>
+          </div>
         </div>
+
+        <div class="mt-12 bg-blue-50 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold text-blue-600 mb-4">
+            Compétences BTS mobilisées
+          </h3>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
+            <li class="flex items-start">
+              <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+              <span
+                >Mettre en place son environnement d'apprentissage
+                personnel</span
+              >
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+              <span
+                >Mettre en œuvre des outils et stratégies de veille
+                informationnelle</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <!-- Projets / Réalisations -->
     <section id="projets" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-blue-600">Projets & Réalisations</h2>
-            
-            <!-- Projet 1 -->
-            <div class="mb-16 bg-gray-50 rounded-lg overflow-hidden shadow-lg">
-                <div class="md:flex">
-                    <div class="md:w-1/2 p-6">
-                        <h3 class="text-2xl font-semibold mb-4">Site web de partage d'images</h3>
-                        
-                        <h4 class="text-lg font-medium text-gray-700 mb-2">Contexte</h4>
-                        <p class="text-gray-600 mb-4">
-                            Développement d'un site web de partage d'image de type réseau social dans le cadre d'un projet scolaire.
-                        </p>
-                        
-                        <h4 class="text-lg font-medium text-gray-700 mb-2">Objectifs</h4>
-                        <ul class="list-disc pl-5 text-gray-600 mb-4">
-                            <li>Créer une interface utilisateur</li>
-                            <li>Mettre en place un système d'authentification</li>
-                            <li>Implémenter des fonctionnalités de creation de meme</li>
-                            <li>Gérer une base de données</li>
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-blue-600">
+          Projets & Réalisations
+        </h2>
 
-                        </ul>
-                        
-                        <h4 class="text-lg font-medium text-gray-700 mb-2">Technologies</h4>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">HTML/CSS(tailwindcss)</span>
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">PHP</span>
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">MySQL</span>
-                        </div>
-                        
-                        <h4 class="text-lg font-medium text-gray-700 mb-2">Mon rôle</h4>
-                        <p class="text-gray-600 mb-4">
-                            Développeur full-stack en charge de la conception de la base de données, du back-end et du front-end.
-                        </p>
-                    </div>
-                    <div class="md:w-1/2 bg-gray-200 p-6 flex items-center justify-center">
-                        <div class="text-center">
-                            <img src="image_insta-meme.png" alt="Capture d'écran du projet" class="rounded-lg mb-4">
-                            <i class="fas fa-laptop-code text-6xl text-gray-500 mb-4"></i>
-                            <p class="text-gray-600">Capture d'écran du projet</p>
-                            <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
-                                <a href="./insta-meme/index.html" target="_blank">
-                                    Voir une preview <i class="fas fa-external-link-alt ml-2"></i>
-                                </a>
-                            </button>
-                            <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
-                                <a href="https://github.com/StonksInd/insta-meme" target="_blank">
-                                    Voir le code <i class="fas fa-external-link-alt ml-2"></i>
-                                </a>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-blue-50 p-6">
-                    <h4 class="text-lg font-medium text-blue-600 mb-2">Compétences BTS mobilisées</h4>
-                    <div class="overflow-x-auto">
-                        <table class="min-w-full bg-white">
-                            <thead>
-                                <tr>
-                                    <th class="py-2 px-4 border-b border-gray-200 bg-gray-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Compétence</th>
-                                    <th class="py-2 px-4 border-b border-gray-200 bg-gray-50 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">Validation</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="py-2 px-4 border-b border-gray-200">Recenser les ressources numériques</td>
-                                    <td class="py-2 px-4 border-b border-gray-200 text-center">
-                                        <i class="fas fa-check-circle text-blue-600 text-xl"></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="py-2 px-4 border-b border-gray-200">Participer à l'évolution d'un site Web</td>
-                                    <td class="py-2 px-4 border-b border-gray-200 text-center">
-                                        <i class="fas fa-check-circle text-blue-600 text-xl"></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="py-2 px-4 border-b border-gray-200">Réaliser les tests et déployer un service</td>
-                                    <td class="py-2 px-4 border-b border-gray-200 text-center">
-                                        <i class="fas fa-check-circle text-blue-600 text-xl"></i>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+        <!-- Projet 1 -->
+        <div class="mb-16 bg-gray-50 rounded-lg overflow-hidden shadow-lg">
+          <div class="md:flex">
+            <div class="md:w-1/2 p-6">
+              <h3 class="text-2xl font-semibold mb-4">
+                Site web de partage d'images
+              </h3>
+
+              <h4 class="text-lg font-medium text-gray-700 mb-2">Contexte</h4>
+              <p class="text-gray-600 mb-4">
+                Développement d'un site web de partage d'image de type réseau
+                social dans le cadre d'un projet scolaire.
+              </p>
+
+              <h4 class="text-lg font-medium text-gray-700 mb-2">Objectifs</h4>
+              <ul class="list-disc pl-5 text-gray-600 mb-4">
+                <li>Créer une interface utilisateur</li>
+                <li>Mettre en place un système d'authentification</li>
+                <li>Implémenter des fonctionnalités de creation de meme</li>
+                <li>Gérer une base de données</li>
+              </ul>
+
+              <h4 class="text-lg font-medium text-gray-700 mb-2">
+                Technologies
+              </h4>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >HTML/CSS(tailwindcss)</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >PHP</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >MySQL</span
+                >
+              </div>
+
+              <h4 class="text-lg font-medium text-gray-700 mb-2">Mon rôle</h4>
+              <p class="text-gray-600 mb-4">
+                Développeur full-stack en charge de la conception de la base de
+                données, du back-end et du front-end.
+              </p>
             </div>
-            
-            <!-- Projet 2 -->
-            <div class="mb-16 bg-gray-50 rounded-lg overflow-hidden shadow-lg">
-                <div class="md:flex">
-                    <div class="md:w-1/2 p-6">
-                        <h3 class="text-2xl font-semibold mb-4">RPG python</h3>
-                        
-                        <h4 class="text-lg font-medium text-gray-700 mb-2">Contexte</h4>
-                        <p class="text-gray-600 mb-4">
-                            Développement d'un RPG python en console dans le cadre d'un projet scolaire.
-                        </p>
-                        
-                        <h4 class="text-lg font-medium text-gray-700 mb-2">Objectifs</h4>
-                        <ul class="list-disc pl-5 text-gray-600 mb-4">
-                            <li>Créer une interface utilisateur intuitive</li>
-                            <li>Gérer les instances de classes</li>
-                            <li>Implémenter des fonctionnalités de combat</li>
-                            
-                        </ul>
-                        
-                        <h4 class="text-lg font-medium text-gray-700 mb-2">Technologies</h4>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Python</span>
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">POO</span>
-                        </div>
-                        
-                        <h4 class="text-lg font-medium text-gray-700 mb-2">Mon rôle</h4>
-                        <p class="text-gray-600 mb-4">
-                            Développement de tout le projet, de la conception à l'implémentation.
-                        </p>
-                    </div>
-                    <div class="md:w-1/2 bg-gray-200 p-6 flex items-center justify-center">
-                        <div class="text-center">
-                            <img src="image_RPG.png" alt="Capture d'écran du projet" class="rounded-lg mb-4">
-                            <i class="fas fa-laptop-code text-6xl text-gray-500 mb-4"></i>
-                            <p class="text-gray-600">Capture d'écran du projet</p>
-                            <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
-                                <a href="https://github.com/StonksInd/RPG" target="_blank">
-                                    Voir le code <i class="fas fa-external-link-alt ml-2"></i>
-                                </a>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-blue-50 p-6">
-                    <h4 class="text-lg font-medium text-blue-600 mb-2">Compétences BTS mobilisées</h4>
-                    <div class="overflow-x-auto">
-                        <table class="min-w-full bg-white">
-                            <thead>
-                                <tr>
-                                    <th class="py-2 px-4 border-b border-gray-200 bg-gray-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Compétence</th>
-                                    <th class="py-2 px-4 border-b border-gray-200 bg-gray-50 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">Validation</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="py-2 px-4 border-b border-gray-200">Recenser et identifier les ressources numériques</td>
-                                    <td class="py-2 px-4 border-b border-gray-200 text-center">
-                                        <i class="fas fa-check-circle text-blue-600 text-xl"></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="py-2 px-4 border-b border-gray-200">Vérifier le respect des règles d’utilisation des ressources numériques                                    </td>
-                                    <td class="py-2 px-4 border-b border-gray-200 text-center">
-                                        <i class="fas fa-check-circle text-blue-600 text-xl"></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="py-2 px-4 border-b border-gray-200">Modéliser une solution applicative</td>
-                                    <td class="py-2 px-4 border-b border-gray-200 text-center">
-                                        <i class="fas fa-check-circle text-blue-600 text-xl"></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="py-2 px-4 border-b border-gray-200">Rédiger des documentations technique et d’utilisation d’une solution applicative</td>
-                                    <td class="py-2 px-4 border-b border-gray-200 text-center">
-                                        <i class="fas fa-check-circle text-blue-600 text-xl"></i>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+            <div
+              class="md:w-1/2 bg-gray-200 p-6 flex items-center justify-center"
+            >
+              <div class="text-center">
+                <img
+                  src="image_insta-meme.png"
+                  alt="Capture d'écran du projet"
+                  class="rounded-lg mb-4"
+                />
+                <i class="fas fa-laptop-code text-6xl text-gray-500 mb-4"></i>
+                <p class="text-gray-600">Capture d'écran du projet</p>
+                <button
+                  class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+                >
+                  <a href="./insta-meme/index.html" target="_blank">
+                    Voir une preview
+                    <i class="fas fa-external-link-alt ml-2"></i>
+                  </a>
+                </button>
+                <button
+                  class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+                >
+                  <a
+                    href="https://github.com/StonksInd/insta-meme"
+                    target="_blank"
+                  >
+                    Voir le code <i class="fas fa-external-link-alt ml-2"></i>
+                  </a>
+                </button>
+              </div>
             </div>
+          </div>
 
-            <!-- Projet 3 -->
-
-            <div class="mb-16 bg-gray-50 rounded-lg overflow-hidden shadow-lg">
-            <div class="md:flex">
-                <div class="md:w-1/2 p-6">
-                        <h3 class="text-2xl font-semibold mb-4">Demineur</h3>
-                        
-                        <h4 class="text-lg font-medium text-gray-700 mb-2">Contexte</h4>
-                        <p class="text-gray-600 mb-4">
-                            Développement d'une application web de demineur en JavaScript dans le cadre d'un projet scolaire.
-                        </p>
-                        
-                        <h4 class="text-lg font-medium text-gray-700 mb-2">Objectifs</h4>
-                        <ul class="list-disc pl-5 text-gray-600 mb-4">
-                            <li>Créer une interface utilisateur intuitive</li>
-                            <li>Utiliser de la recursivité</li>
-                            <li>Génerer un grille de demineur</li>
-                            <li>Implémenter des fonctionnalités de jeu</li>
-
-                        </ul>
-                        
-                        <h4 class="text-lg font-medium text-gray-700 mb-2">Technologies</h4>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">JavaScript</span>
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Tailwindcss</span>
-                        </div>
-                        
-                        <h4 class="text-lg font-medium text-gray-700 mb-2">Mon rôle</h4>
-                        <p class="text-gray-600 mb-4">
-                            Développement de tout le projet, de la conception à l'implémentation.
-                        </p>
-                    </div>
-                    <div class="md:w-1/2 bg-gray-200 p-6 flex items-center justify-center">
-                        <div class="text-center">
-                            <img src="image_demineur.png" alt="Capture d'écran du projet" class="rounded-lg mb-4 w-full max-w-xs mx-auto">
-                            <i class="fas fa-laptop-code text-6xl text-gray-500 mb-4"></i>
-                            <p class="text-gray-600">Capture d'écran du projet</p>
-                            <div class="space-y-2">
-                            <button class="w-full bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
-                                <a href="./demineur/index.html" class="flex items-center justify-center">
-                                    Voir une preview <i class="fas fa-external-link-alt ml-2"></i>
-                                </a>
-                            </button>
-                            <button class="w-full bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition">
-                                <a href="https://github.com/StonksInd/demineur" class="flex items-center justify-center">
-                                    Voir le code <i class="fab fa-github ml-2"></i>
-                                </a>
-                            </button>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                
-                <div class="bg-blue-50 p-6">
-                    <h4 class="text-lg font-medium text-blue-600 mb-2">Compétences BTS mobilisées</h4>
-                    <div class="overflow-x-auto">
-                        <table class="min-w-full bg-white">
-                            <thead>
-                                <tr>
-                                    <th class="py-2 px-4 border-b border-gray-200 bg-gray-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Compétence</th>
-                                    <th class="py-2 px-4 border-b border-gray-200 bg-gray-50 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">Validation</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="py-2 px-4 border-b border-gray-200">Traiter des demandes systèmes, réseau ou applicatifs</td>
-                                    <td class="py-2 px-4 border-b border-gray-200 text-center">
-                                        <i class="fas fa-check-circle text-blue-600 text-xl"></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="py-2 px-4 border-b border-gray-200">Réaliser les tests et déployer un service</td>
-                                    <td class="py-2 px-4 border-b border-gray-200 text-center">
-                                        <i class="fas fa-check-circle text-blue-600 text-xl"></i>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+          <div class="bg-blue-50 p-6">
+            <h4 class="text-lg font-medium text-blue-600 mb-2">
+              Compétences BTS mobilisées
+            </h4>
+            <div class="overflow-x-auto">
+              <table class="min-w-full bg-white">
+                <thead>
+                  <tr>
+                    <th
+                      class="py-2 px-4 border-b border-gray-200 bg-gray-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                    >
+                      Compétence
+                    </th>
+                    <th
+                      class="py-2 px-4 border-b border-gray-200 bg-gray-50 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                    >
+                      Validation
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="py-2 px-4 border-b border-gray-200">
+                      Gérer le patrimoine informatique
+                    </td>
+                    <td class="py-2 px-4 border-b border-gray-200 text-center">
+                      <i class="fas fa-check-circle text-blue-600 text-xl"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-4 border-b border-gray-200">
+                      Répondre aux incidents et aux demandes d’assistance et
+                      d’évolution
+                    </td>
+                    <td class="py-2 px-4 border-b border-gray-200 text-center">
+                      <i class="fas fa-check-circle text-blue-600 text-xl"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-4 border-b border-gray-200">
+                      Travailler en mode projet
+                    </td>
+                    <td class="py-2 px-4 border-b border-gray-200 text-center">
+                      <i class="fas fa-check-circle text-blue-600 text-xl"></i>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-        
-
-
-            <!-- Projet 4 -->
-            <div class="mb-16 bg-gray-50 rounded-lg overflow-hidden shadow-lg">
-                <div class="md:flex">
-                    <div class="md:w-1/2 p-6">
-                        <h3 class="text-2xl font-semibold mb-4">Pokédex Interactif</h3>
-                        
-                        <h4 class="text-lg font-medium text-gray-700 mb-2">Contexte</h4>
-                        <p class="text-gray-600 mb-4">
-                            Développement d'une application web Pokédex interactive avec Next.js et TypeScript, intégrant une API REST pour afficher et filtrer les données des Pokémon.
-                        </p>
-                        
-                        <h4 class="text-lg font-medium text-gray-700 mb-2">Objectifs</h4>
-                        <ul class="list-disc pl-5 text-gray-600 mb-4">
-                            <li>Créer une interface utilisateur moderne et responsive</li>
-                            <li>Intégrer une API REST externe</li>
-                            <li>Implémenter des fonctionnalités de recherche et filtrage</li>
-                            <li>Développer un système de tri dynamique</li>
-                            <li>Créer des modales détaillées pour chaque Pokémon</li>
-                        </ul>
-                        
-                        <h4 class="text-lg font-medium text-gray-700 mb-2">Technologies</h4>
-                        <div class="flex flex-wrap gap-2 mb-4">
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Next.js</span>
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">TypeScript</span>
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">React</span>
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">TailwindCSS</span>
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Material-UI</span>
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">API REST</span>
-                        </div>
-                        
-                        <h4 class="text-lg font-medium text-gray-700 mb-2">Mon rôle</h4>
-                        <p class="text-gray-600 mb-4">
-                            Développement complet de l'application, de l'architecture technique à l'interface utilisateur, incluant la gestion des états et l'intégration API.
-                        </p>
-                    </div>
-                    <div class="md:w-1/2 bg-gray-200 p-6 flex items-center justify-center">
-                        <div class="text-center">
-                            <!-- Pour garder la cohérence avec les autres projets, utilisez une image de capture d'écran ici -->
-                            <img src="image_pokedex.png" alt="Capture d'écran du projet" class="rounded-lg mb-4 w-full max-w-xs mx-auto">
-                            <i class="fas fa-laptop-code text-6xl text-gray-500 mb-4"></i>
-                            <p class="text-gray-600">Capture d'écran du projet</p>
-                            <div class="space-y-2">
-                                <button class="w-full bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">
-                                    <a href="#" class="flex items-center justify-center">
-                                        Voir une preview <i class="fas fa-external-link-alt ml-2"></i>
-                                    </a>
-                                </button>
-                                <button class="w-full bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition">
-                                    <a href="#" class="flex items-center justify-center">
-                                        Voir le code <i class="fab fa-github ml-2"></i>
-                                    </a>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="bg-blue-50 p-6">
-                    <h4 class="text-lg font-medium text-blue-600 mb-2">Compétences BTS mobilisées</h4>
-                    <div class="overflow-x-auto">
-                        <table class="min-w-full bg-white">
-                            <thead>
-                                <tr>
-                                    <th class="py-2 px-4 border-b border-gray-200 bg-gray-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">Compétence</th>
-                                    <th class="py-2 px-4 border-b border-gray-200 bg-gray-50 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider">Validation</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="py-2 px-4 border-b border-gray-200">Répondre aux incidents et aux demandes d'assistance et d'évolution</td>
-                                    <td class="py-2 px-4 border-b border-gray-200 text-center">
-                                        <i class="fas fa-check-circle text-blue-600 text-xl"></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="py-2 px-4 border-b border-gray-200">Travailler en mode projet</td>
-                                    <td class="py-2 px-4 border-b border-gray-200 text-center">
-                                        <i class="fas fa-check-circle text-blue-600 text-xl"></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="py-2 px-4 border-b border-gray-200">Organiser son développement professionnel</td>
-                                    <td class="py-2 px-4 border-b border-gray-200 text-center">
-                                        <i class="fas fa-check-circle text-blue-600 text-xl"></i>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <!-- Section détaillée des fonctionnalités -->
-            <div class="bg-white p-6 border-t border-gray-200">
-                <h4 class="text-lg font-medium text-gray-700 mb-4">Fonctionnalités développées</h4>
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <h5 class="font-semibold text-gray-800 mb-2">Interface Utilisateur</h5>
-                        <ul class="text-sm text-gray-600 space-y-1">
-                            <li>• Grille responsive adaptative</li>
-                            <li>• Cartes Pokémon interactives</li>
-                            <li>• Modales détaillées avec statistiques</li>
-                            <li>• Interface multilingue (FR/EN)</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h5 class="font-semibold text-gray-800 mb-2">Fonctionnalités avancées</h5>
-                        <ul class="text-sm text-gray-600 space-y-1">
-                            <li>• Recherche en temps réel</li>
-                            <li>• Filtrage par génération et type</li>
-                            <li>• Tri multi-critères (nom, poids, taille)</li>
-                            <li>• Gestion d'état React avancée</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+
+        <!-- Projet 2 -->
+        <div class="mb-16 bg-gray-50 rounded-lg overflow-hidden shadow-lg">
+          <div class="md:flex">
+            <div class="md:w-1/2 p-6">
+              <h3 class="text-2xl font-semibold mb-4">RPG python</h3>
+
+              <h4 class="text-lg font-medium text-gray-700 mb-2">Contexte</h4>
+              <p class="text-gray-600 mb-4">
+                Développement d'un RPG python en console dans le cadre d'un
+                projet scolaire.
+              </p>
+
+              <h4 class="text-lg font-medium text-gray-700 mb-2">Objectifs</h4>
+              <ul class="list-disc pl-5 text-gray-600 mb-4">
+                <li>Créer une interface utilisateur intuitive</li>
+                <li>Gérer les instances de classes</li>
+                <li>Implémenter des fonctionnalités de combat</li>
+              </ul>
+
+              <h4 class="text-lg font-medium text-gray-700 mb-2">
+                Technologies
+              </h4>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >Python</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >POO</span
+                >
+              </div>
+
+              <h4 class="text-lg font-medium text-gray-700 mb-2">Mon rôle</h4>
+              <p class="text-gray-600 mb-4">
+                Développement de tout le projet, de la conception à
+                l'implémentation.
+              </p>
+            </div>
+            <div
+              class="md:w-1/2 bg-gray-200 p-6 flex items-center justify-center"
+            >
+              <div class="text-center">
+                <img
+                  src="image_RPG.png"
+                  alt="Capture d'écran du projet"
+                  class="rounded-lg mb-4"
+                />
+                <i class="fas fa-laptop-code text-6xl text-gray-500 mb-4"></i>
+                <p class="text-gray-600">Capture d'écran du projet</p>
+                <button
+                  class="mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+                >
+                  <a href="https://github.com/StonksInd/RPG" target="_blank">
+                    Voir le code <i class="fas fa-external-link-alt ml-2"></i>
+                  </a>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-blue-50 p-6">
+            <h4 class="text-lg font-medium text-blue-600 mb-2">
+              Compétences BTS mobilisées
+            </h4>
+            <div class="overflow-x-auto">
+              <table class="min-w-full bg-white">
+                <thead>
+                  <tr>
+                    <th
+                      class="py-2 px-4 border-b border-gray-200 bg-gray-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                    >
+                      Compétence
+                    </th>
+                    <th
+                      class="py-2 px-4 border-b border-gray-200 bg-gray-50 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                    >
+                      Validation
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="py-2 px-4 border-b border-gray-200">
+                      Recenser et identifier les ressources numériques
+                    </td>
+                    <td class="py-2 px-4 border-b border-gray-200 text-center">
+                      <i class="fas fa-check-circle text-blue-600 text-xl"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-4 border-b border-gray-200">
+                      Vérifier le respect des règles d’utilisation des
+                      ressources numériques
+                    </td>
+                    <td class="py-2 px-4 border-b border-gray-200 text-center">
+                      <i class="fas fa-check-circle text-blue-600 text-xl"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-4 border-b border-gray-200">
+                      Modéliser une solution applicative
+                    </td>
+                    <td class="py-2 px-4 border-b border-gray-200 text-center">
+                      <i class="fas fa-check-circle text-blue-600 text-xl"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-4 border-b border-gray-200">
+                      Rédiger des documentations technique et d’utilisation
+                      d’une solution applicative
+                    </td>
+                    <td class="py-2 px-4 border-b border-gray-200 text-center">
+                      <i class="fas fa-check-circle text-blue-600 text-xl"></i>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
+
+        <!-- Projet 3 -->
+
+        <div class="mb-16 bg-gray-50 rounded-lg overflow-hidden shadow-lg">
+          <div class="md:flex">
+            <div class="md:w-1/2 p-6">
+              <h3 class="text-2xl font-semibold mb-4">Demineur</h3>
+
+              <h4 class="text-lg font-medium text-gray-700 mb-2">Contexte</h4>
+              <p class="text-gray-600 mb-4">
+                Développement d'une application web de demineur en JavaScript
+                dans le cadre d'un projet scolaire.
+              </p>
+
+              <h4 class="text-lg font-medium text-gray-700 mb-2">Objectifs</h4>
+              <ul class="list-disc pl-5 text-gray-600 mb-4">
+                <li>Créer une interface utilisateur intuitive</li>
+                <li>Utiliser de la recursivité</li>
+                <li>Génerer un grille de demineur</li>
+                <li>Implémenter des fonctionnalités de jeu</li>
+              </ul>
+
+              <h4 class="text-lg font-medium text-gray-700 mb-2">
+                Technologies
+              </h4>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >JavaScript</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >Tailwindcss</span
+                >
+              </div>
+
+              <h4 class="text-lg font-medium text-gray-700 mb-2">Mon rôle</h4>
+              <p class="text-gray-600 mb-4">
+                Développement de tout le projet, de la conception à
+                l'implémentation.
+              </p>
+            </div>
+            <div
+              class="md:w-1/2 bg-gray-200 p-6 flex items-center justify-center"
+            >
+              <div class="text-center">
+                <img
+                  src="image_demineur.png"
+                  alt="Capture d'écran du projet"
+                  class="rounded-lg mb-4 w-full max-w-xs mx-auto"
+                />
+                <i class="fas fa-laptop-code text-6xl text-gray-500 mb-4"></i>
+                <p class="text-gray-600">Capture d'écran du projet</p>
+                <div class="space-y-2">
+                  <button
+                    class="w-full bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+                  >
+                    <a
+                      href="./demineur/index.html"
+                      class="flex items-center justify-center"
+                    >
+                      Voir une preview
+                      <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
+                  </button>
+                  <button
+                    class="w-full bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition"
+                  >
+                    <a
+                      href="https://github.com/StonksInd/demineur"
+                      class="flex items-center justify-center"
+                    >
+                      Voir le code <i class="fab fa-github ml-2"></i>
+                    </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-blue-50 p-6">
+            <h4 class="text-lg font-medium text-blue-600 mb-2">
+              Compétences BTS mobilisées
+            </h4>
+            <div class="overflow-x-auto">
+              <table class="min-w-full bg-white">
+                <thead>
+                  <tr>
+                    <th
+                      class="py-2 px-4 border-b border-gray-200 bg-gray-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                    >
+                      Compétence
+                    </th>
+                    <th
+                      class="py-2 px-4 border-b border-gray-200 bg-gray-50 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                    >
+                      Validation
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="py-2 px-4 border-b border-gray-200">
+                      Traiter des demandes systèmes, réseau ou applicatifs
+                    </td>
+                    <td class="py-2 px-4 border-b border-gray-200 text-center">
+                      <i class="fas fa-check-circle text-blue-600 text-xl"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-4 border-b border-gray-200">
+                      Réaliser les tests et déployer un service
+                    </td>
+                    <td class="py-2 px-4 border-b border-gray-200 text-center">
+                      <i class="fas fa-check-circle text-blue-600 text-xl"></i>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projet 4 -->
+        <div class="mb-16 bg-gray-50 rounded-lg overflow-hidden shadow-lg">
+          <div class="md:flex">
+            <div class="md:w-1/2 p-6">
+              <h3 class="text-2xl font-semibold mb-4">Pokédex Interactif</h3>
+
+              <h4 class="text-lg font-medium text-gray-700 mb-2">Contexte</h4>
+              <p class="text-gray-600 mb-4">
+                Développement d'une application web Pokédex interactive avec
+                Next.js et TypeScript, intégrant une API REST pour afficher et
+                filtrer les données des Pokémon.
+              </p>
+
+              <h4 class="text-lg font-medium text-gray-700 mb-2">Objectifs</h4>
+              <ul class="list-disc pl-5 text-gray-600 mb-4">
+                <li>Créer une interface utilisateur moderne et responsive</li>
+                <li>Intégrer une API REST externe</li>
+                <li>
+                  Implémenter des fonctionnalités de recherche et filtrage
+                </li>
+                <li>Développer un système de tri dynamique</li>
+                <li>Créer des modales détaillées pour chaque Pokémon</li>
+              </ul>
+
+              <h4 class="text-lg font-medium text-gray-700 mb-2">
+                Technologies
+              </h4>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >Next.js</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >TypeScript</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >React</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >TailwindCSS</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >Material-UI</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >API REST</span
+                >
+              </div>
+
+              <h4 class="text-lg font-medium text-gray-700 mb-2">Mon rôle</h4>
+              <p class="text-gray-600 mb-4">
+                Développement complet de l'application, de l'architecture
+                technique à l'interface utilisateur, incluant la gestion des
+                états et l'intégration API.
+              </p>
+            </div>
+            <div
+              class="md:w-1/2 bg-gray-200 p-6 flex items-center justify-center"
+            >
+              <div class="text-center">
+                <img
+                  src="image_pokedex.png"
+                  alt="Capture d'écran du projet"
+                  class="rounded-lg mb-4 w-full max-w-xs mx-auto"
+                />
+                <i class="fas fa-laptop-code text-6xl text-gray-500 mb-4"></i>
+                <p class="text-gray-600">Capture d'écran du projet</p>
+                <div class="space-y-2">
+                  <button
+                    class="w-full bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+                  >
+                    <a href="#" class="flex items-center justify-center">
+                      Voir une preview
+                      <i class="fas fa-external-link-alt ml-2"></i>
+                    </a>
+                  </button>
+                  <button
+                    class="w-full bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition"
+                  >
+                    <a href="#" class="flex items-center justify-center">
+                      Voir le code <i class="fab fa-github ml-2"></i>
+                    </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-blue-50 p-6">
+            <h4 class="text-lg font-medium text-blue-600 mb-2">
+              Compétences BTS mobilisées
+            </h4>
+            <div class="overflow-x-auto">
+              <table class="min-w-full bg-white">
+                <thead>
+                  <tr>
+                    <th
+                      class="py-2 px-4 border-b border-gray-200 bg-gray-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                    >
+                      Compétence
+                    </th>
+                    <th
+                      class="py-2 px-4 border-b border-gray-200 bg-gray-50 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                    >
+                      Validation
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="py-2 px-4 border-b border-gray-200">
+                      Répondre aux incidents et aux demandes d'assistance et
+                      d'évolution
+                    </td>
+                    <td class="py-2 px-4 border-b border-gray-200 text-center">
+                      <i class="fas fa-check-circle text-blue-600 text-xl"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-4 border-b border-gray-200">
+                      Travailler en mode projet
+                    </td>
+                    <td class="py-2 px-4 border-b border-gray-200 text-center">
+                      <i class="fas fa-check-circle text-blue-600 text-xl"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-2 px-4 border-b border-gray-200">
+                      Organiser son développement professionnel
+                    </td>
+                    <td class="py-2 px-4 border-b border-gray-200 text-center">
+                      <i class="fas fa-check-circle text-blue-600 text-xl"></i>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projet 5 -->
+        <div class="mb-16 bg-gray-50 rounded-lg overflow-hidden shadow-lg">
+          <div class="md:flex">
+            <div class="md:w-1/2 p-6">
+              <h3 class="text-2xl font-semibold mb-4">
+                Keep Note - Application Mobile
+              </h3>
+
+              <h4 class="text-lg font-medium text-gray-700 mb-2">Contexte</h4>
+              <p class="text-gray-600 mb-4">
+                Développement d'une application mobile de prise de notes avec
+                React Native et Expo, incluant un système d'authentification
+                avancé (QR Code), gestion de tâches et catégorisation des notes.
+              </p>
+
+              <h4 class="text-lg font-medium text-gray-700 mb-2">Objectifs</h4>
+              <ul class="list-disc pl-5 text-gray-600 mb-4">
+                <li>Créer une interface mobile moderne et intuitive</li>
+                <li>Implémenter l'authentification par QR Code</li>
+                <li>Développer un système de gestion de notes et tâches</li>
+                <li>
+                  Intégrer une API REST pour la synchronisation des données
+                </li>
+                <li>Créer un système de catégorisation avancé</li>
+                <li>Implémenter des tests unitaires et d'intégration</li>
+              </ul>
+
+              <h4 class="text-lg font-medium text-gray-700 mb-2">
+                Technologies
+              </h4>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >React Native</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >Expo</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >TypeScript</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >React</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >TailwindCSS</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >Jest</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >API REST</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >Expo Camera</span
+                >
+              </div>
+
+              <h4 class="text-lg font-medium text-gray-700 mb-2">Mon rôle</h4>
+              <p class="text-gray-600 mb-4">
+                Développement complet de l'application mobile, de l'architecture
+                à l'interface utilisateur, incluant l'implémentation des
+                fonctionnalités avancées et la mise en place des tests.
+              </p>
+            </div>
+            <div
+              class="md:w-1/2 bg-gray-200 p-6 flex items-center justify-center"
+            >
+              <div class="text-center">
+                <div
+                  class="w-full max-w-xs mx-auto mb-4 bg-white rounded-2xl shadow-lg p-4"
+                >
+                  <div
+                    class="bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl p-4 text-white mb-3"
+                  >
+                    <h5 class="font-bold text-lg">KEEP NOTE</h5>
+                    <p class="text-sm opacity-90">Mes Notes & Tâches</p>
+                  </div>
+                  <div class="space-y-2 text-left">
+                    <div class="bg-yellow-100 rounded-lg p-2">
+                      <div class="text-xs font-medium text-yellow-800">
+                        📝 Note importante
+                      </div>
+                    </div>
+                    <div class="bg-green-100 rounded-lg p-2">
+                      <div class="text-xs font-medium text-green-800">
+                        ✅ Tâche terminée
+                      </div>
+                    </div>
+                    <div class="bg-blue-100 rounded-lg p-2">
+                      <div class="text-xs font-medium text-blue-800">
+                        📋 Liste de courses
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-3 flex justify-around border-t pt-2">
+                    <i class="fas fa-home text-blue-500"></i>
+                    <i class="fas fa-tasks text-gray-400"></i>
+                    <i class="fas fa-sticky-note text-gray-400"></i>
+                  </div>
+                </div>
+                <i class="fas fa-mobile-alt text-6xl text-gray-500 mb-4"></i>
+                <p class="text-gray-600">Application Mobile React Native</p>
+                <div class="space-y-2 mt-4">
+                  <button
+                    class="w-full bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition"
+                  >
+                    <a
+                      href="https://github.com/StonksInd/takeNote"
+                      class="flex items-center justify-center"
+                    >
+                      Voir le code <i class="fab fa-github ml-2"></i>
+                    </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-blue-50 p-6">
+            <h4 class="text-lg font-medium text-blue-600 mb-2">
+              Compétences BTS mobilisées
+            </h4>
+            <div class="overflow-x-auto">
+              <table
+                class="min-w-full bg-white rounded-lg overflow-hidden shadow-sm"
+              >
+                <thead>
+                  <tr>
+                    <th
+                      class="py-3 px-4 border-b border-gray-200 bg-gray-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                    >
+                      Compétence
+                    </th>
+                    <th
+                      class="py-3 px-4 border-b border-gray-200 bg-gray-50 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                    >
+                      Validation
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="py-3 px-4 border-b border-gray-200">
+                      Gérer le patrimoine informatique
+                    </td>
+                    <td class="py-3 px-4 border-b border-gray-200 text-center">
+                      <i class="fas fa-check-circle text-green-600 text-xl"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 border-b border-gray-200">
+                      Mettre à disposition des utilisateurs un service
+                      informatique
+                    </td>
+                    <td class="py-3 px-4 border-b border-gray-200 text-center">
+                      <i class="fas fa-check-circle text-green-600 text-xl"></i>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projet 6 -->
+        <div class="mb-16 bg-gray-50 rounded-lg overflow-hidden shadow-lg">
+          <div class="md:flex">
+            <div class="md:w-1/2 p-6">
+              <h3 class="text-2xl font-semibold mb-4">Site Vitrine</h3>
+
+              <h4 class="text-lg font-medium text-gray-700 mb-2">Contexte</h4>
+              <p class="text-gray-600 mb-4">
+                Création d’un site vitrine responsive pour un cabinet
+                d’architecture, permettant de présenter les projets, les
+                services, l’équipe et de faciliter la prise de contact.
+              </p>
+
+              <h4 class="text-lg font-medium text-gray-700 mb-2">Objectifs</h4>
+              <ul class="list-disc pl-5 text-gray-600 mb-4">
+                <li>Concevoir une interface élégante et moderne</li>
+                <li>
+                  Présenter dynamiquement les réalisations architecturales
+                </li>
+                <li>Faciliter le contact via un formulaire personnalisé</li>
+                <li>Référencement naturel SEO</li>
+                <li>Optimiser la performance du site</li>
+              </ul>
+
+              <h4 class="text-lg font-medium text-gray-700 mb-2">
+                Technologies
+              </h4>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >HTML5</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >CSS3</span
+                >
+              </div>
+
+              <h4 class="text-lg font-medium text-gray-700 mb-2">Mon rôle</h4>
+              <p class="text-gray-600 mb-4">
+                Réalisation complète du site, de la maquette au déploiement.
+                Intégration du contenu, mise en place du formulaire de contact,
+                et optimisation SEO.
+              </p>
+            </div>
+
+            <div
+              class="md:w-1/2 bg-gray-200 p-6 flex items-center justify-center"
+            >
+              <div class="text-center">
+                <div
+                  class="w-full max-w-xs mx-auto mb-4 bg-white rounded-2xl shadow-lg p-4"
+                >
+                  <div
+                    class="bg-gradient-to-br from-indigo-500 to-gray-800 rounded-xl p-4 text-white mb-3"
+                  >
+                    <h5 class="font-bold text-lg">ATELIER ARCHI</h5>
+                    <p class="text-sm opacity-90">
+                      Architecture Contemporaine & Durable
+                    </p>
+                  </div>
+                  <div class="space-y-2 text-left">
+                    <div class="bg-gray-100 rounded-lg p-2">
+                      <div class="text-xs font-medium text-gray-800">
+                        🏛️ Projets réalisés
+                      </div>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-2">
+                      <div class="text-xs font-medium text-gray-800">
+                        📄 Services
+                      </div>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-2">
+                      <div class="text-xs font-medium text-gray-800">
+                        📬 Contact
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-3 flex justify-around border-t pt-2">
+                    <i class="fas fa-home text-indigo-500"></i>
+                    <i class="fas fa-briefcase text-gray-400"></i>
+                    <i class="fas fa-envelope text-gray-400"></i>
+                  </div>
+                </div>
+                <i class="fas fa-laptop-code text-6xl text-gray-500 mb-4"></i>
+                <p class="text-gray-600">Site Web Responsive</p>
+                <div class="space-y-2 mt-4">
+                  <button
+                    class="w-full bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition"
+                  >
+                    <a
+                      href="https://github.com/StonksInd/siteArchi"
+                      class="flex items-center justify-center"
+                    >
+                      Voir le code <i class="fab fa-github ml-2"></i>
+                    </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-blue-50 p-6">
+            <h4 class="text-lg font-medium text-indigo-600 mb-2">
+              Compétences BTS mobilisées
+            </h4>
+            <div class="overflow-x-auto">
+              <table
+                class="min-w-full bg-white rounded-lg overflow-hidden shadow-sm"
+              >
+                <thead>
+                  <tr>
+                    <th
+                      class="py-3 px-4 border-b border-gray-200 bg-gray-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                    >
+                      Compétence
+                    </th>
+                    <th
+                      class="py-3 px-4 border-b border-gray-200 bg-gray-50 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                    >
+                      Validation
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="py-3 px-4 border-b border-gray-200">
+                      Répondre aux incidents et aux demandes d’assistance et
+                      d’évolution
+                    </td>
+                    <td class="py-3 px-4 border-b border-gray-200 text-center">
+                      <i class="fas fa-check-circle text-green-600 text-xl"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 border-b border-gray-200">
+                      Développer la présence en ligne de l’organisation
+                    </td>
+                    <td class="py-3 px-4 border-b border-gray-200 text-center">
+                      <i class="fas fa-check-circle text-green-600 text-xl"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 border-b border-gray-200">
+                      Travailler en mode projet
+                    </td>
+                    <td class="py-3 px-4 border-b border-gray-200 text-center">
+                      <i class="fas fa-check-circle text-green-600 text-xl"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 border-b border-gray-200">
+                      Mettre à disposition des utilisateurs un service
+                      informatique
+                    </td>
+                    <td class="py-3 px-4 border-b border-gray-200 text-center">
+                      <i class="fas fa-check-circle text-green-600 text-xl"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4">
+                      Organiser son développement professionnel
+                    </td>
+                    <td class="py-3 px-4 text-center">
+                      <i class="fas fa-check-circle text-green-600 text-xl"></i>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projet WeekPal -->
+        <div class="mb-16 bg-gray-50 rounded-lg overflow-hidden shadow-lg">
+          <div class="md:flex">
+            <div class="md:w-1/2 p-6">
+              <h3 class="text-2xl font-semibold mb-4">WeekPal</h3>
+
+              <h4 class="text-lg font-medium text-gray-700 mb-2">Contexte</h4>
+              <p class="text-gray-600 mb-4">
+                Développement d'une application Web pour organiser sa semaine de
+                manière visuelle et interactive. Chaque carte représente un
+                projet ou une activité planifiée dans un emploi du temps.
+              </p>
+
+              <h4 class="text-lg font-medium text-gray-700 mb-2">Objectifs</h4>
+              <ul class="list-disc pl-5 text-gray-600 mb-4">
+                <li>Organiser les tâches par jour de la semaine</li>
+                <li>Permettre la glisser-déposer intuitive des cartes</li>
+                <li>Sauvegarder les modifications en temps réel</li>
+              </ul>
+
+              <h4 class="text-lg font-medium text-gray-700 mb-2">
+                Technologies
+              </h4>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >HTML5</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >Tailwind CSS</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >TypeScript</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >HeroUI</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >Lucide</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
+                  >dnd kit</span
+                >
+              </div>
+
+              <h4 class="text-lg font-medium text-gray-700 mb-2">Mon rôle</h4>
+              <p class="text-gray-600 mb-4">
+                Réalisation de l'interface front-end inspirée de Trello,
+                implémentation du glisser-déposer, gestion du rendu responsive.
+                Adaptation du projet pour intégration dans mon portfolio.
+              </p>
+            </div>
+
+            <div
+              class="md:w-1/2 bg-gray-200 p-6 flex items-center justify-center"
+            >
+              <div class="text-center">
+                <div
+                  class="w-full max-w-xs mx-auto mb-4 bg-white rounded-2xl shadow-lg p-4"
+                >
+                  <div
+                    class="bg-gradient-to-br from-pink-500 to-purple-800 rounded-xl p-4 text-white mb-3"
+                  >
+                    <h5 class="font-bold text-lg">WEEKPAL</h5>
+                    <p class="text-sm opacity-90">
+                      Planificateur de semaine visuel
+                    </p>
+                  </div>
+                  <div class="space-y-2 text-left">
+                    <div class="bg-gray-100 rounded-lg p-2">
+                      <div class="text-xs font-medium text-gray-800">
+                        📅 Organisation hebdomadaire
+                      </div>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-2">
+                      <div class="text-xs font-medium text-gray-800">
+                        🧠 Méthode agile visuelle
+                      </div>
+                    </div>
+                    <div class="bg-gray-100 rounded-lg p-2">
+                      <div class="text-xs font-medium text-gray-800">
+                        💾 Sauvegarde locale
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-3 flex justify-around border-t pt-2">
+                    <i class="fas fa-calendar-alt text-pink-500"></i>
+                    <i class="fas fa-tasks text-gray-400"></i>
+                    <i class="fas fa-cog text-gray-400"></i>
+                  </div>
+                </div>
+                <i
+                  class="fas fa-clipboard-list text-6xl text-gray-500 mb-4"
+                ></i>
+                <p class="text-gray-600">Interface de gestion intuitive</p>
+                <div class="space-y-2 mt-4">
+                  <button
+                    class="w-full bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition"
+                  >
+                    <a
+                      href="https://github.com/3rgotech/weekpal"
+                      class="flex items-center justify-center"
+                      target="_blank"
+                    >
+                      Voir le code <i class="fab fa-github ml-2"></i>
+                    </a>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-blue-50 p-6">
+            <h4 class="text-lg font-medium text-indigo-600 mb-2">
+              Compétences BTS mobilisées
+            </h4>
+            <div class="overflow-x-auto">
+              <table
+                class="min-w-full bg-white rounded-lg overflow-hidden shadow-sm"
+              >
+                <thead>
+                  <tr>
+                    <th
+                      class="py-3 px-4 border-b border-gray-200 bg-gray-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                    >
+                      Compétence
+                    </th>
+                    <th
+                      class="py-3 px-4 border-b border-gray-200 bg-gray-50 text-center text-xs font-semibold text-gray-600 uppercase tracking-wider"
+                    >
+                      Validation
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="py-3 px-4 border-b border-gray-200">
+                      Gérer le patrimoine informatique
+                    </td>
+                    <td class="py-3 px-4 border-b border-gray-200 text-center">
+                      <i class="fas fa-check-circle text-green-600 text-xl"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 border-b border-gray-200">
+                      Répondre aux incidents et aux demandes d’assistance et
+                      d’évolution
+                    </td>
+                    <td class="py-3 px-4 border-b border-gray-200 text-center">
+                      <i class="fas fa-check-circle text-green-600 text-xl"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4 border-b border-gray-200">
+                      Travailler en mode projet
+                    </td>
+                    <td class="py-3 px-4 border-b border-gray-200 text-center">
+                      <i class="fas fa-check-circle text-green-600 text-xl"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4">
+                      Mettre à disposition des utilisateurs un service
+                      informatique
+                    </td>
+                    <td class="py-3 px-4 text-center">
+                      <i class="fas fa-check-circle text-green-600 text-xl"></i>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="py-3 px-4">
+                      MOrganiser son développement professionnel
+                    </td>
+                    <td class="py-3 px-4 text-center">
+                      <i class="fas fa-check-circle text-green-600 text-xl"></i>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    
-
-
 
     <!-- Veille technologique -->
     <section id="veille" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12 text-blue-600">Veille technologique</h2>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold mb-4">Stratégie de veille</h3>
-                    <p class="text-gray-600 mb-4">
-                        Je mène une veille technologique active pour rester informé des dernières évolutions dans le domaine du développement web et mobile.
-                    </p>
-                    
-                    <h4 class="font-medium text-gray-700 mb-2">Outils utilisés</h4>
-                    <ul class="list-disc pl-5 text-gray-600 mb-4 space-y-1">
-                        <li>Daily.dev</li>
-                        <li>Podcast youtbe (Tech_Sama Show)</li>
-                        <li>Twitter (X)</li>
-                        <li>Instagram</li>
-                        <li>LinkedIn</li>
-                        <li>Meetup Tech</li>
-                    </ul>
-                    
-                    <h4 class="font-medium text-gray-700 mb-2">Fréquence</h4>
-                    <p class="text-gray-600">
-                        De manière hebdomadaire, je consulte les nouvelles publications et articles sur les sujets qui m'intéressent.
-                    </p>
-                </div>
-                
-                <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold mb-4">Sujets suivis</h3>
-                    
-                    <div class="mb-6">
-                        <h4 class="font-medium text-gray-700 mb-2">1. Les nouvelles IA</h4>
-                        <p class="text-gray-600 mb-2">
-                            Veille sur les dernières avancées en matière d'intelligence artificielle, y compris les modèles de langage et les applications pratiques.
-                        </p>
-                    </div>
-                    
-                    <div>
-                        <h4 class="font-medium text-gray-700 mb-2">2. Le spatial</h4>
-                        <p class="text-gray-600 mb-2">
-                            Suivi des nouvelles technologies et missions spatiales, y compris les avancées en matière de voyages interplanétaires et d'exploration spatiale.
-                        </p>
-                    </div>
-                    
-                    <div>
-                        <h4 class="font-medium text-gray-700 mb-2">3. Le Hardware</h4>
-                        <p class="text-gray-600 mb-2">
-                            Suivi des nouvelles tendances en matière de matériel informatique, y compris les composants, les périphériques et les innovations technologiques.
-                        </p>
-                    </div>
-                </div>
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-blue-600">
+          Veille technologique
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold mb-4">Stratégie de veille</h3>
+            <p class="text-gray-600 mb-4">
+              Je mène une veille technologique active pour rester informé des
+              dernières évolutions dans le domaine du développement web et
+              mobile.
+            </p>
+
+            <h4 class="font-medium text-gray-700 mb-2">Outils utilisés</h4>
+            <ul class="list-disc pl-5 text-gray-600 mb-4 space-y-1">
+              <li>Daily.dev</li>
+              <li>Podcast youtbe (Tech_Sama Show)</li>
+              <li>Twitter (X)</li>
+              <li>Instagram</li>
+              <li>LinkedIn</li>
+              <li>Meetup Tech</li>
+            </ul>
+
+            <h4 class="font-medium text-gray-700 mb-2">Fréquence</h4>
+            <p class="text-gray-600">
+              De manière hebdomadaire, je consulte les nouvelles publications et
+              articles sur les sujets qui m'intéressent.
+            </p>
+          </div>
+
+          <div class="bg-gray-50 p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold mb-4">Sujets suivis</h3>
+
+            <div class="mb-6">
+              <h4 class="font-medium text-gray-700 mb-2">
+                1. Les nouvelles IA
+              </h4>
+              <p class="text-gray-600 mb-2">
+                Veille sur les dernières avancées en matière d'intelligence
+                artificielle, y compris les modèles de langage et les
+                applications pratiques.
+              </p>
             </div>
-            
-            <div class="mt-12 bg-blue-50 p-6 rounded-lg">
-                <h3 class="text-xl font-semibold text-blue-600 mb-4">Compétences BTS mobilisées</h3>
-                <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
-                        <span>Mettre en œuvre des outils et stratégies de veille informationnelle</span>
-                    </li>
-                </ul>
+
+            <div>
+              <h4 class="font-medium text-gray-700 mb-2">2. Le spatial</h4>
+              <p class="text-gray-600 mb-2">
+                Suivi des nouvelles technologies et missions spatiales, y
+                compris les avancées en matière de voyages interplanétaires et
+                d'exploration spatiale.
+              </p>
             </div>
+
+            <div>
+              <h4 class="font-medium text-gray-700 mb-2">3. Le Hardware</h4>
+              <p class="text-gray-600 mb-2">
+                Suivi des nouvelles tendances en matière de matériel
+                informatique, y compris les composants, les périphériques et les
+                innovations technologiques.
+              </p>
+            </div>
+          </div>
         </div>
+
+        <div class="mt-12 bg-blue-50 p-6 rounded-lg">
+          <h3 class="text-xl font-semibold text-blue-600 mb-4">
+            Compétences BTS mobilisées
+          </h3>
+          <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
+            <li class="flex items-start">
+              <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+              <span
+                >Mettre en œuvre des outils et stratégies de veille
+                informationnelle</span
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <!-- Communication & identité numérique -->
     <section id="contact" class="py-16 bg-blue-600 text-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-12">Communication & identité numérique</h2>
-            
-            <div class="grid md:grid-cols-2 gap-8">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">
+          Communication & identité numérique
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="text-xl font-semibold mb-4">
+              Mes réseaux professionnels
+            </h3>
+
+            <div class="space-y-4">
+              <a
+                href="https://www.linkedin.com/in/nathana%C3%ABl-lejuste/"
+                target="_blank"
+                class="flex items-center p-3 bg-blue-700 rounded-lg hover:bg-blue-800 transition"
+              >
+                <i class="fab fa-linkedin text-2xl mr-3"></i>
                 <div>
-                    <h3 class="text-xl font-semibold mb-4">Mes réseaux professionnels</h3>
-                    
-                    <div class="space-y-4">
-                        <a href="https://www.linkedin.com/in/nathana%C3%ABl-lejuste/" target="_blank" class="flex items-center p-3 bg-blue-700 rounded-lg hover:bg-blue-800 transition">
-                            <i class="fab fa-linkedin text-2xl mr-3"></i>
-                            <div>
-                                <p class="font-medium">LinkedIn</p>
-                                <p class="text-sm text-blue-200">linkedin.com/in/nathanaël-lejuste</p>
-                            </div>
-                        </a>
-                        
-                        <a href="https://github.com/StonksInd" target="_blank" class="flex items-center p-3 bg-gray-800 rounded-lg hover:bg-gray-900 transition">
-                            <i class="fab fa-github text-2xl mr-3"></i>
-                            <div>
-                                <p class="font-medium">GitHub</p>
-                                <p class="text-sm text-gray-400">github.com/StonksInd</p>
-                            </div>
-                        </a>
-                        
-                        <a href="mailto:nathanael.lejuste@gmail.com" target="_blank" class="flex items-center p-3 bg-blue-400 rounded-lg hover:bg-blue-500 transition">
-                            <i class="fas fa-envelope text-2xl mr-3"></i>
-                            <div>
-                                <p class="font-medium">Email</p>
-                                <p class="text-sm text-blue-100">nathanael.lejuste@gmail.com</p>
-                            </div>
-                        </a>
-                    </div>
+                  <p class="font-medium">LinkedIn</p>
+                  <p class="text-sm text-blue-200">
+                    linkedin.com/in/nathanaël-lejuste
+                  </p>
                 </div>
-                
+              </a>
+
+              <a
+                href="https://github.com/StonksInd"
+                target="_blank"
+                class="flex items-center p-3 bg-gray-800 rounded-lg hover:bg-gray-900 transition"
+              >
+                <i class="fab fa-github text-2xl mr-3"></i>
                 <div>
-                    <h3 class="text-xl font-semibold mb-4">Pratiques sur les réseaux</h3>
-                    <p class="mb-4">
-                        Je maintiens une présence professionnelle sur les réseaux, en partageant des articles techniques, en participant à des discussions et en suivant des influenceurs du domaine.
-                    </p>
-                    
+                  <p class="font-medium">GitHub</p>
+                  <p class="text-sm text-gray-400">github.com/StonksInd</p>
                 </div>
+              </a>
+
+              <a
+                href="mailto:nathanael.lejuste@gmail.com"
+                target="_blank"
+                class="flex items-center p-3 bg-blue-400 rounded-lg hover:bg-blue-500 transition"
+              >
+                <i class="fas fa-envelope text-2xl mr-3"></i>
+                <div>
+                  <p class="font-medium">Email</p>
+                  <p class="text-sm text-blue-100">
+                    nathanael.lejuste@gmail.com
+                  </p>
+                </div>
+              </a>
             </div>
-            
-            
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold mb-4">
+              Pratiques sur les réseaux
+            </h3>
+            <p class="mb-4">
+              Je maintiens une présence professionnelle sur les réseaux, en
+              partageant des articles techniques, en participant à des
+              discussions et en suivant des influenceurs du domaine.
+            </p>
+          </div>
         </div>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto px-4 text-center">
-            <p class="mb-4">© 2025 Nathanaël LEJUSTE - Portfolio BTS SIO SLAM</p>
-            <div class="flex justify-center space-x-4">
-                <a href="https://www.linkedin.com/in/nathana%C3%ABl-lejuste/" target="_blank" class="hover:text-blue-400 transition">
-                    <i class="fab fa-linkedin text-xl"></i>
-                </a>
-                <a href="https://github.com/StonksInd" target="_blank" class="hover:text-gray-300 transition">
-                    <i class="fab fa-github text-xl"></i>
-                </a>
-                <a href="mailto:nathanael.lejuste@gmail.com" target="_blank" class="hover:text-blue-300 transition">
-                    <i class="fas fa-envelope text-xl"></i>
-                </a>
-            </div>
+      <div class="container mx-auto px-4 text-center">
+        <p class="mb-4">© 2025 Nathanaël LEJUSTE - Portfolio BTS SIO SLAM</p>
+        <div class="flex justify-center space-x-4">
+          <a
+            href="https://www.linkedin.com/in/nathana%C3%ABl-lejuste/"
+            target="_blank"
+            class="hover:text-blue-400 transition"
+          >
+            <i class="fab fa-linkedin text-xl"></i>
+          </a>
+          <a
+            href="https://github.com/StonksInd"
+            target="_blank"
+            class="hover:text-gray-300 transition"
+          >
+            <i class="fab fa-github text-xl"></i>
+          </a>
+          <a
+            href="mailto:nathanael.lejuste@gmail.com"
+            target="_blank"
+            class="hover:text-blue-300 transition"
+          >
+            <i class="fas fa-envelope text-xl"></i>
+          </a>
+          <a
+            href="tabSythese.png"
+            target="_blank"
+            class="hover:text-yellow-400 transition"
+            title="Tableau"
+          >
+            <i class="fas fa-chart-bar text-xl"></i>
+          </a>
         </div>
+      </div>
     </footer>
 
     <script>
-        // Menu mobile
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-        
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                    
-                    // Fermer le menu mobile si ouvert
-                    mobileMenu.classList.add('hidden');
-                }
+      // Menu mobile
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      // Smooth scrolling
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: "smooth",
             });
+
+            // Fermer le menu mobile si ouvert
+            mobileMenu.classList.add("hidden");
+          }
         });
+      });
     </script>
-</body>
+  </body>
 </html>
