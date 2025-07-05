@@ -1,5 +1,0 @@
-Trello : https://trello.com/b/wnwi4cVj/epsimulator
-
-Weekpal cahier des charges : https://docs.google.com/document/d/1ewECv08p_AvFeN-si5C0pxJq264RAoPQGg60dJmd3w4/edit?usp=sharing
-npm run start
-
