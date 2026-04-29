@@ -1,1539 +1,2368 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nathanaël LEJUSTE Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    <title>Nathanaël LEJUSTE — Développeur</title>
+    <meta
+      name="description"
+      content="Portfolio de Nathanaël LEJUSTE, développeur en formation BTS SIO SLAM."
     />
-  </head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ── RESET & BASE ── */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      :root {
+        --bg: #0b0c10;
+        --surface: #131519;
+        --card: #1a1c22;
+        --border: #2a2d36;
+        --accent: #e8ff47;
+        --accent2: #47ffe8;
+        --muted: #6b7280;
+        --text: #e4e6ed;
+        --text-dim: #9ba3af;
+        --font-display: "Syne", sans-serif;
+        --font-mono: "DM Mono", monospace;
+        --font-body: "DM Sans", sans-serif;
+        --radius: 4px;
+        --transition: 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-body);
+        font-size: 16px;
+        line-height: 1.65;
+        overflow-x: hidden;
+      }
+      ::selection {
+        background: var(--accent);
+        color: #000;
+      }
 
-  <body class="bg-gray-50 font-sans">
-    <!-- Navigation -->
-    <nav class="bg-blue-600 text-white shadow-lg sticky top-0 z-50">
-      <div
-        class="container mx-auto px-4 py-3 flex justify-between items-center"
-      >
-        <div class="flex items-center space-x-2">
-          <i class="fas fa-code text-2xl"></i>
-          <span class="text-xl font-bold">Nathanaël LEJUSTE Portfolio</span>
-        </div>
-        <div class="hidden md:flex space-x-6">
-          <a href="#presentation" class="hover:text-blue-200 transition"
-            >Présentation</a
-          >
-          <a href="#competences" class="hover:text-blue-200 transition"
-            >Compétences</a
-          >
-          <a href="#projets" class="hover:text-blue-200 transition">Projets</a>
-          <a href="#veille" class="hover:text-blue-200 transition">Veille</a>
-          <a href="#contact" class="hover:text-blue-200 transition">Contact</a>
-        </div>
-        <button class="md:hidden focus:outline-none" id="menu-btn">
-          <i class="fas fa-bars text-2xl"></i>
-        </button>
-      </div>
-      <!-- Mobile menu -->
-      <div class="md:hidden hidden bg-blue-700 px-4 py-2" id="mobile-menu">
-        <a
-          href="#presentation"
-          class="block py-2 hover:text-blue-200 transition"
-          >Présentation</a
-        >
-        <a href="#competences" class="block py-2 hover:text-blue-200 transition"
-          >Compétences</a
-        >
-        <a href="#projets" class="block py-2 hover:text-blue-200 transition"
-          >Projets</a
-        >
-        <a href="#veille" class="block py-2 hover:text-blue-200 transition"
-          >Veille</a
-        >
-        <a href="#contact" class="block py-2 hover:text-blue-200 transition"
-          >Contact</a
-        >
-      </div>
+      /* ── NOISE TEXTURE ── */
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+        pointer-events: none;
+        z-index: 9999;
+        opacity: 0.4;
+      }
+
+      /* ── NAV ── */
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+        background: rgba(11, 12, 16, 0.85);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--border);
+        padding: 0 clamp(1rem, 5vw, 4rem);
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .nav-logo {
+        font-family: var(--font-display);
+        font-weight: 800;
+        font-size: 1rem;
+        letter-spacing: -0.02em;
+        color: var(--text);
+        text-decoration: none;
+      }
+      .nav-logo span {
+        color: var(--accent);
+      }
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
+      .nav-links a {
+        font-family: var(--font-mono);
+        font-size: 0.78rem;
+        color: var(--text-dim);
+        text-decoration: none;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        transition: color var(--transition);
+      }
+      .nav-links a:hover {
+        color: var(--accent);
+      }
+      .nav-hamburger {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--text);
+        flex-direction: column;
+        gap: 5px;
+      }
+      .nav-hamburger span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: currentColor;
+        transition: var(--transition);
+      }
+      .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: var(--surface);
+        border-bottom: 1px solid var(--border);
+        padding: 1.5rem clamp(1rem, 5vw, 4rem);
+        z-index: 99;
+        flex-direction: column;
+        gap: 1.2rem;
+      }
+      .mobile-menu.open {
+        display: flex;
+      }
+      .mobile-menu a {
+        font-family: var(--font-mono);
+        font-size: 0.85rem;
+        color: var(--text-dim);
+        text-decoration: none;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+      .mobile-menu a:hover {
+        color: var(--accent);
+      }
+
+      /* ── HERO ── */
+      .hero {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 7rem clamp(1rem, 8vw, 6rem) 4rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-glow {
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        background: radial-gradient(
+          ellipse,
+          rgba(232, 255, 71, 0.06) 0%,
+          transparent 70%
+        );
+        top: -100px;
+        right: -150px;
+        pointer-events: none;
+      }
+      .hero-glow2 {
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        background: radial-gradient(
+          ellipse,
+          rgba(71, 255, 232, 0.04) 0%,
+          transparent 70%
+        );
+        bottom: 50px;
+        left: -100px;
+        pointer-events: none;
+      }
+      .hero-inner {
+        max-width: 900px;
+        width: 100%;
+      }
+      .hero-tag {
+        font-family: var(--font-mono);
+        font-size: 0.78rem;
+        color: var(--accent);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+        opacity: 0;
+        animation: fadeUp 0.6s ease forwards 0.1s;
+      }
+      .hero-title {
+        font-family: var(--font-display);
+        font-weight: 800;
+        font-size: clamp(3rem, 10vw, 7.5rem);
+        line-height: 1;
+        letter-spacing: -0.04em;
+        margin-bottom: 0.4em;
+        opacity: 0;
+        animation: fadeUp 0.7s ease forwards 0.2s;
+      }
+      .hero-title .line2 {
+        color: transparent;
+        -webkit-text-stroke: 1px var(--border);
+        display: block;
+      }
+      .hero-subtitle {
+        font-size: clamp(1rem, 2.5vw, 1.25rem);
+        color: var(--text-dim);
+        max-width: 520px;
+        margin-bottom: 2.5rem;
+        font-weight: 300;
+        opacity: 0;
+        animation: fadeUp 0.7s ease forwards 0.35s;
+      }
+      .hero-ctas {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        opacity: 0;
+        animation: fadeUp 0.7s ease forwards 0.5s;
+      }
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.75rem;
+        background: var(--accent);
+        color: #000;
+        font-family: var(--font-mono);
+        font-size: 0.82rem;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-decoration: none;
+        border-radius: var(--radius);
+        transition: var(--transition);
+      }
+      .btn-primary:hover {
+        background: #d4eb2e;
+        transform: translateY(-2px);
+      }
+      .btn-outline {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.75rem;
+        background: transparent;
+        color: var(--text);
+        font-family: var(--font-mono);
+        font-size: 0.82rem;
+        letter-spacing: 0.06em;
+        text-decoration: none;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        transition: var(--transition);
+      }
+      .btn-outline:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+        transform: translateY(-2px);
+      }
+      .hero-scroll {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.4rem;
+        opacity: 0;
+        animation: fadeIn 1s ease forwards 1.2s;
+      }
+      .hero-scroll span {
+        font-family: var(--font-mono);
+        font-size: 0.68rem;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        text-transform: uppercase;
+      }
+      .scroll-line {
+        width: 1px;
+        height: 40px;
+        background: linear-gradient(to bottom, var(--muted), transparent);
+        animation: scrollPulse 2s ease-in-out infinite;
+      }
+
+      /* ── SECTIONS COMMONS ── */
+      section {
+        padding: 6rem clamp(1rem, 8vw, 6rem);
+      }
+      .section-label {
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.14em;
+        color: var(--accent);
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+      .section-title {
+        font-family: var(--font-display);
+        font-weight: 800;
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        letter-spacing: -0.03em;
+        margin-bottom: 3rem;
+      }
+      .section-title em {
+        color: var(--accent);
+        font-style: normal;
+      }
+      .divider {
+        width: 100%;
+        height: 1px;
+        background: var(--border);
+        margin: 0;
+      }
+
+      /* ── ABOUT ── */
+      #about {
+        background: var(--surface);
+      }
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: start;
+      }
+      .about-text p {
+        color: var(--text-dim);
+        font-weight: 300;
+        margin-bottom: 1.2rem;
+        font-size: 1.05rem;
+      }
+      .about-text p strong {
+        color: var(--text);
+        font-weight: 500;
+      }
+      .about-sidebar {
+      }
+      .skills-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      .skill-group {
+      }
+      .skill-group-title {
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 0.75rem;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 0.5rem;
+      }
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+      }
+      .tag {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        padding: 0.3rem 0.7rem;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        color: var(--text-dim);
+        transition: var(--transition);
+      }
+      .tag:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+      .softskills-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+      .softskills-list li {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 0.92rem;
+        color: var(--text-dim);
+      }
+      .softskills-list li::before {
+        content: "→";
+        color: var(--accent);
+        font-family: var(--font-mono);
+      }
+
+      /* ── PROJECTS ── */
+      #projects {
+        background: var(--bg);
+      }
+      .projects-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .project-item {
+        background: var(--card);
+        border-bottom: 1px solid var(--border);
+        transition: background var(--transition);
+        cursor: pointer;
+      }
+      .project-item:last-child {
+        border-bottom: none;
+      }
+      .project-item:hover {
+        background: var(--surface);
+      }
+      .project-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.5rem 2rem;
+        gap: 1rem;
+      }
+      .project-meta {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        flex: 1;
+        min-width: 0;
+      }
+      .project-num {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        color: var(--muted);
+        min-width: 2rem;
+      }
+      .project-name {
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 1.1rem;
+        letter-spacing: -0.02em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .project-badges {
+        display: flex;
+        gap: 0.4rem;
+        flex-wrap: wrap;
+      }
+      .badge {
+        font-family: var(--font-mono);
+        font-size: 0.65rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        padding: 0.2rem 0.55rem;
+        border-radius: 999px;
+        background: rgba(232, 255, 71, 0.08);
+        color: var(--accent);
+        border: 1px solid rgba(232, 255, 71, 0.2);
+      }
+      .badge.blue {
+        background: rgba(71, 255, 232, 0.08);
+        color: var(--accent2);
+        border-color: rgba(71, 255, 232, 0.2);
+      }
+      .badge.gray {
+        background: var(--surface);
+        color: var(--muted);
+        border-color: var(--border);
+      }
+      .project-arrow {
+        color: var(--muted);
+        font-size: 1.2rem;
+        transition:
+          transform var(--transition),
+          color var(--transition);
+        min-width: 1.2rem;
+      }
+      .project-item.open .project-arrow {
+        transform: rotate(45deg);
+        color: var(--accent);
+      }
+      .project-body {
+        display: none;
+        padding: 0 2rem 2rem 2rem;
+        border-top: 1px solid var(--border);
+      }
+      .project-item.open .project-body {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        padding-top: 1.5rem;
+      }
+      .project-description {
+        color: var(--text-dim);
+        font-size: 0.95rem;
+        line-height: 1.7;
+      }
+      .project-description h4 {
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 0.6rem;
+        margin-top: 1.2rem;
+      }
+      .project-description h4:first-child {
+        margin-top: 0;
+      }
+      .project-description ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+      }
+      .project-description ul li::before {
+        content: "— ";
+        color: var(--accent);
+        font-family: var(--font-mono);
+      }
+      .project-visual {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 220px;
+        overflow: hidden;
+        position: relative;
+      }
+      .project-visual img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 6px;
+        display: block;
+      }
+      .project-visual .no-img {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--muted);
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+      }
+      .project-visual .no-img svg {
+        opacity: 0.3;
+      }
+      .project-links {
+        margin-top: 1.2rem;
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+      }
+      .project-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        color: var(--text-dim);
+        text-decoration: none;
+        border: 1px solid var(--border);
+        padding: 0.35rem 0.9rem;
+        border-radius: var(--radius);
+        transition: var(--transition);
+      }
+      .project-link:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      /* ── STAGE / E6 ── */
+      #stage {
+        background: var(--surface);
+      }
+      .stage-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+      .stage-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 2rem;
+        transition: border-color var(--transition);
+        position: relative;
+        overflow: hidden;
+      }
+      .stage-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, var(--accent), var(--accent2));
+        opacity: 0;
+        transition: opacity var(--transition);
+      }
+      .stage-card:hover::before {
+        opacity: 1;
+      }
+      .stage-card:hover {
+        border-color: rgba(232, 255, 71, 0.2);
+      }
+      .stage-number {
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        color: var(--accent);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+      .stage-title {
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 1.15rem;
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.02em;
+      }
+      .stage-org {
+        font-family: var(--font-mono);
+        font-size: 0.78rem;
+        color: var(--muted);
+        margin-bottom: 1.2rem;
+      }
+      .stage-body {
+        color: var(--text-dim);
+        font-size: 0.92rem;
+        line-height: 1.65;
+      }
+      .stage-body p {
+        margin-bottom: 0.8rem;
+      }
+      .stage-body strong {
+        color: var(--text);
+        font-weight: 500;
+      }
+      .stage-comps {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+      }
+      .stage-comp {
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        color: var(--text-dim);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .stage-comp::before {
+        content: "✓";
+        color: var(--accent);
+      }
+
+      /* ── VEILLE ── */
+      #veille {
+        background: var(--bg);
+      }
+      .veille-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+      .veille-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 2rem;
+      }
+      .veille-card h3 {
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 1.1rem;
+        letter-spacing: -0.02em;
+        margin-bottom: 1.2rem;
+      }
+      .veille-item {
+        margin-bottom: 1.5rem;
+      }
+      .veille-item h4 {
+        font-family: var(--font-mono);
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 0.5rem;
+      }
+      .veille-item p {
+        color: var(--text-dim);
+        font-size: 0.92rem;
+      }
+      .tools-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin-top: 0.5rem;
+      }
+      .tool-chip {
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        padding: 0.25rem 0.6rem;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        color: var(--text-dim);
+      }
+
+      /* ── CONTACT ── */
+      #contact {
+        background: var(--surface);
+      }
+      .contact-inner {
+        max-width: 700px;
+      }
+      .contact-inner p {
+        color: var(--text-dim);
+        font-size: 1.05rem;
+        font-weight: 300;
+        margin-bottom: 2.5rem;
+      }
+      .contact-links {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .contact-link {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        padding: 1.2rem 1.5rem;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        text-decoration: none;
+        color: var(--text);
+        transition: var(--transition);
+      }
+      .contact-link:hover {
+        border-color: var(--accent);
+        transform: translateX(4px);
+      }
+      .contact-link-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 6px;
+        display: grid;
+        place-items: center;
+        font-size: 1.1rem;
+        flex-shrink: 0;
+      }
+      .contact-link-icon.gh {
+        background: rgba(255, 255, 255, 0.05);
+      }
+      .contact-link-icon.li {
+        background: rgba(10, 102, 194, 0.15);
+      }
+      .contact-link-icon.em {
+        background: rgba(232, 255, 71, 0.08);
+      }
+      .contact-link-text {
+      }
+      .contact-link-text strong {
+        display: block;
+        font-family: var(--font-display);
+        font-size: 0.95rem;
+        font-weight: 700;
+      }
+      .contact-link-text span {
+        font-family: var(--font-mono);
+        font-size: 0.75rem;
+        color: var(--muted);
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background: var(--bg);
+        border-top: 1px solid var(--border);
+        padding: 2rem clamp(1rem, 8vw, 6rem);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      footer p {
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        color: var(--muted);
+      }
+      .footer-links {
+        display: flex;
+        gap: 1.5rem;
+      }
+      .footer-links a {
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        color: var(--muted);
+        text-decoration: none;
+        transition: color var(--transition);
+      }
+      .footer-links a:hover {
+        color: var(--accent);
+      }
+
+      /* ── MODAL ── */
+      .modal-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.85);
+        z-index: 200;
+        backdrop-filter: blur(6px);
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+      }
+      .modal-overlay.open {
+        display: flex;
+      }
+      .modal {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        max-width: 720px;
+        width: 100%;
+        max-height: 85vh;
+        overflow-y: auto;
+        padding: 2.5rem;
+        position: relative;
+      }
+      .modal h2 {
+        font-family: var(--font-display);
+        font-weight: 800;
+        font-size: 1.6rem;
+        letter-spacing: -0.03em;
+        margin-bottom: 1.5rem;
+      }
+      .modal h3 {
+        font-family: var(--font-mono);
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-top: 1.5rem;
+        margin-bottom: 0.6rem;
+      }
+      .modal p,
+      .modal li {
+        color: var(--text-dim);
+        font-size: 0.9rem;
+        line-height: 1.65;
+      }
+      .modal ul {
+        padding-left: 1.2rem;
+        margin-bottom: 0.6rem;
+      }
+      .modal-close {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        color: var(--text-dim);
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        display: grid;
+        place-items: center;
+        font-size: 1rem;
+        transition: var(--transition);
+      }
+      .modal-close:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      /* ── ANIMATIONS ── */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @keyframes scrollPulse {
+        0%,
+        100% {
+          opacity: 0.4;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: none;
+      }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+        }
+        .nav-hamburger {
+          display: flex;
+        }
+        .about-grid {
+          grid-template-columns: 1fr;
+          gap: 2.5rem;
+        }
+        .stage-grid {
+          grid-template-columns: 1fr;
+        }
+        .veille-grid {
+          grid-template-columns: 1fr;
+        }
+        .project-header {
+          flex-wrap: wrap;
+        }
+        .project-item.open .project-body {
+          grid-template-columns: 1fr;
+        }
+        .project-badges {
+          display: none;
+        }
+        footer {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ── NAV ── -->
+    <nav>
+      <a href="#" class="nav-logo">NL<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#projects">Projets</a></li>
+        <li><a href="#stage">E6 / Stage</a></li>
+        <li><a href="#veille">Veille</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav-hamburger" id="menuBtn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </nav>
 
-    <!-- Page de garde -->
-    <header class="bg-gradient-to-r from-blue-500 to-blue-700 text-white py-20">
-      <div class="container mx-auto px-4 text-center">
-        <div class="flex justify-center mb-6">
-          <div class="bg-white rounded-full p-2 shadow-xl">
-            <i class="fas fa-code text-6xl text-blue-600"></i>
-          </div>
-        </div>
-        <h1 class="text-4xl md:text-5xl font-bold mb-2">Nathanaël LEJUSTE</h1>
-        <h2 class="text-2xl md:text-3xl font-semibold mb-4">Portfolio</h2>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about">À propos</a>
+      <a href="#projects">Projets</a>
+      <a href="#stage">E6 / Stage</a>
+      <a href="#veille">Veille</a>
+      <a href="#contact">Contact</a>
+    </div>
 
-        <div class="flex justify-center space-x-4">
-          <a
-            href="mailto:nathanael.lejuste@gmail.com"
-            target="_blank"
-            class="bg-white text-blue-600 px-6 py-2 rounded-full font-medium hover:bg-gray-100 transition"
-          >
-            <i class="fas fa-envelope mr-2"></i>Email
-          </a>
-          <a
-            href="https://www.linkedin.com/in/nathana%C3%ABl-lejuste/"
-            target="_blank"
-            class="bg-blue-800 text-white px-6 py-2 rounded-full font-medium hover:bg-blue-900 transition"
-          >
-            <i class="fab fa-linkedin mr-2"></i>LinkedIn
+    <!-- ── HERO ── -->
+    <header class="hero">
+      <div class="hero-glow"></div>
+      <div class="hero-glow2"></div>
+      <div class="hero-inner">
+        <p class="hero-tag">Développeur · BTS SIO SLAM · 2026</p>
+        <h1 class="hero-title">
+          Nathanaël<br />
+          <span class="line2">LEJUSTE</span>
+        </h1>
+        <p class="hero-subtitle">
+          Passionné par le développement web et mobile, l'informatique quantique
+          et la construction de choses qui fonctionnent vraiment.
+        </p>
+        <div class="hero-ctas">
+          <a href="#projects" class="btn-primary">
+            Voir mes projets
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
           </a>
           <a
             href="https://github.com/StonksInd"
             target="_blank"
-            class="bg-gray-800 text-white px-6 py-2 rounded-full font-medium hover:bg-gray-900 transition"
+            rel="noopener"
+            class="btn-outline"
           >
-            <i class="fab fa-github mr-2"></i>GitHub
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"
+              />
+            </svg>
+            GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/nathana%C3%ABl-lejuste/"
+            target="_blank"
+            rel="noopener"
+            class="btn-outline"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+              />
+            </svg>
+            LinkedIn
           </a>
         </div>
+      </div>
+      <div class="hero-scroll">
+        <span>scroll</span>
+        <div class="scroll-line"></div>
       </div>
     </header>
 
-    <!-- Présentation personnelle -->
-    <section id="presentation" class="py-16 bg-white">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12 text-blue-600">
-          Présentation personnelle
-        </h2>
+    <div class="divider"></div>
 
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-          <div>
-            <h3 class="text-2xl font-semibold mb-4 text-gray-800">
-              Mon parcours
-            </h3>
-            <p class="text-gray-600 mb-6">
-              Après avoir obtenu mon bac général spécialité Physique Chimie et
-              NSI, j'ai choisi de m'orienter vers un Bachelor chez EPSI. Cette
-              formation correspond parfaitement à mon intérêt pour
-              l'informatique.
-            </p>
-          </div>
-
-          <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-            <h3 class="text-2xl font-semibold mb-4 text-gray-800">
-              Mes soft skills
-            </h3>
-            <div class="space-y-4">
-              <div class="flex items-center space-x-3">
-                <i class="fas fa-users text-blue-600 text-xl"></i>
-                <h4 class="font-medium text-gray-700">Esprit d'équipe</h4>
-              </div>
-              <div class="flex items-center space-x-3">
-                <i class="fas fa-sync-alt text-blue-600 text-xl"></i>
-                <h4 class="font-medium text-gray-700">Capacité d'adaptation</h4>
-              </div>
-              <div class="flex items-center space-x-3">
-                <i class="fas fa-comments text-blue-600 text-xl"></i>
-                <h4 class="font-medium text-gray-700">Communication</h4>
-              </div>
-              <div class="flex items-center space-x-3">
-                <i class="fas fa-handshake text-blue-600 text-xl"></i>
-                <h4 class="font-medium text-gray-700">Travail d'équipe</h4>
-              </div>
-            </div>
-
-            <h3 class="text-2xl font-semibold mt-8 mb-4 text-gray-800">
-              Vision du métier
-            </h3>
-            <p class="text-gray-600">
-              À terme, je souhaite devenir Developpeur. Je m'intéresse
-              particulièrement à l'informatique quantique.
-            </p>
-          </div>
+    <!-- ── ABOUT ── -->
+    <section id="about">
+      <p class="section-label reveal">01 — À propos</p>
+      <h2 class="section-title reveal">Mon <em>parcours</em></h2>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            Après un bac général avec les spécialités
+            <strong>Physique-Chimie et NSI</strong>, j'ai choisi de plonger dans
+            le développement en intégrant un
+            <strong>BTS SIO option SLAM</strong> puis un Bachelor chez EPSI. Ce
+            n'était pas un choix par défaut — c'est le seul domaine où je ne
+            vois pas le temps passer.
+          </p>
+          <p>
+            En stage chez <strong>Cotranet</strong>, j'ai travaillé sur une
+            vraie application Java/Vue.js en production : système de release
+            notes, documentation API avec Swagger, tickets Mantis. Loin des
+            projets factices, confronté aux vraies contraintes.
+          </p>
+          <p>
+            À terme, je veux devenir développeur — pas juste quelqu'un qui écrit
+            du code, mais quelqu'un qui
+            <strong>comprend ce qu'il construit</strong>. Ce qui m'attire en
+            particulier :
+            <strong
+              >[décrivez ici ce qui vous motive vraiment : informatique
+              quantique, dev mobile, open source, etc.]</strong
+            >
+          </p>
         </div>
-      </div>
-    </section>
-
-    <!-- Compétences techniques -->
-    <section id="competences" class="py-16 bg-gray-50">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12 text-blue-600">
-          Compétences techniques & outils
-        </h2>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Langages -->
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <div class="flex items-center mb-4">
-              <i class="fas fa-code text-2xl text-blue-500 mr-3"></i>
-              <h3 class="text-xl font-semibold">Langages</h3>
+        <div class="about-sidebar reveal">
+          <div class="skills-grid">
+            <div class="skill-group">
+              <p class="skill-group-title">Langages</p>
+              <div class="tags">
+                <span class="tag">HTML / CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">PHP</span>
+                <span class="tag">SQL</span>
+                <span class="tag">Python</span>
+                <span class="tag">Java</span>
+                <span class="tag">Bash</span>
+              </div>
             </div>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                >HTML/CSS</span
-              >
-              <span
-                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                >JavaScript</span
-              >
-              <span
-                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                >PHP</span
-              >
-              <span
-                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                >SQL</span
-              >
-
-              <span
-                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                >Python</span
-              >
-              <span
-                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                >Bash</span
-              >
+            <div class="skill-group">
+              <p class="skill-group-title">Frameworks & outils</p>
+              <div class="tags">
+                <span class="tag">React</span>
+                <span class="tag">Next.js</span>
+                <span class="tag">React Native</span>
+                <span class="tag">Vue.js</span>
+                <span class="tag">Expo</span>
+                <span class="tag">Jest</span>
+                <span class="tag">Tailwind</span>
+                <span class="tag">Git</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">SQLite</span>
+                <span class="tag">Spring Boot</span>
+                <span class="tag">Swagger</span>
+              </div>
             </div>
-          </div>
-
-          <!-- Frameworks -->
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <div class="flex items-center mb-4">
-              <i class="fas fa-cubes text-2xl text-blue-500 mr-3"></i>
-              <h3 class="text-xl font-semibold">Frameworks</h3>
+            <div class="skill-group">
+              <p class="skill-group-title">Méthodes</p>
+              <div class="tags">
+                <span class="tag">Agile / Scrum</span>
+                <span class="tag">UML</span>
+                <span class="tag">REST API</span>
+                <span class="tag">MCD / MLD</span>
+              </div>
             </div>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                >React</span
-              >
-              <span
-                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                >Jest</span
-              >
-              <span
-                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                >Next</span
-              >
-            </div>
-          </div>
-
-          <!-- Outils -->
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <div class="flex items-center mb-4">
-              <i class="fas fa-tools text-2xl text-blue-500 mr-3"></i>
-              <h3 class="text-xl font-semibold">Outils</h3>
-            </div>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                >Git</span
-              >
-              <span
-                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                >GitHub</span
-              >
-              <span
-                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                >VS Code</span
-              >
-              <span
-                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                >MySQL</span
-              >
-              <span
-                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                >SQL serveur</span
-              >
-              <span
-                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                >Expo go</span
-              >
-            </div>
-          </div>
-
-          <!-- Environnements -->
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <div class="flex items-center mb-4">
-              <i class="fas fa-desktop text-2xl text-blue-500 mr-3"></i>
-              <h3 class="text-xl font-semibold">Environnements</h3>
-            </div>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                >Windows</span
-              >
-              <span
-                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                >Linux</span
-              >
-            </div>
-          </div>
-
-          <!-- Méthodologies -->
-          <div class="bg-white p-6 rounded-lg shadow-md">
-            <div class="flex items-center mb-4">
-              <i class="fas fa-project-diagram text-2xl text-blue-500 mr-3"></i>
-              <h3 class="text-xl font-semibold">Méthodologies</h3>
-            </div>
-            <div class="flex flex-wrap gap-2">
-              <span
-                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                >UML</span
-              >
-              <span
-                class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                >Agile</span
-              >
+            <div class="skill-group">
+              <p class="skill-group-title">Qualités</p>
+              <ul class="softskills-list">
+                <li>Esprit d'équipe & communication</li>
+                <li>Capacité d'adaptation rapide</li>
+                <li>Curiosité technique constante</li>
+                <li>Autonomie sur les projets perso</li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Projets / Réalisations -->
-    <section id="projets" class="py-16 bg-white">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12 text-blue-600">
-          Projets & Réalisations
-        </h2>
+    <div class="divider"></div>
 
-        <!-- Projet 1 -->
-        <div class="mb-16 bg-gray-50 rounded-lg overflow-hidden shadow-lg">
-          <div class="md:flex">
-            <div class="md:w-1/2 p-6">
-              <h3 class="text-2xl font-semibold mb-4">
-                Site web de partage d'images
-              </h3>
+    <!-- ── PROJECTS ── -->
+    <section id="projects">
+      <p class="section-label reveal">02 — Réalisations</p>
+      <h2 class="section-title reveal">Mes <em>projets</em></h2>
 
-              <h4 class="text-lg font-medium text-gray-700 mb-2">Contexte</h4>
-              <p class="text-gray-600 mb-4">
-                Développement d'un site web de partage d'image de type réseau
-                social dans le cadre d'un projet scolaire.
-              </p>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">Objectifs</h4>
-              <ul class="list-disc pl-5 text-gray-600 mb-4">
-                <li>Créer une interface utilisateur</li>
-                <li>Mettre en place un système d'authentification</li>
-                <li>Implémenter des fonctionnalités de creation de meme</li>
-                <li>Gérer une base de données</li>
-              </ul>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">
-                Technologies
-              </h4>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >HTML/CSS(tailwindcss)</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >PHP</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >MySQL</span
-                >
+      <div class="projects-list reveal" id="projectsList">
+        <!-- PROJET 1 -->
+        <div class="project-item" data-index="0">
+          <div class="project-header">
+            <div class="project-meta">
+              <span class="project-num">01</span>
+              <span class="project-name">Insta-Meme</span>
+              <div class="project-badges">
+                <span class="badge">PHP</span>
+                <span class="badge blue">MySQL</span>
+                <span class="badge gray">Full-stack</span>
               </div>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">Mon rôle</h4>
-              <p class="text-gray-600 mb-4">
-                Développeur full-stack en charge de la conception de la base de
-                données, du back-end et du front-end.
-              </p>
             </div>
-            <div
-              class="md:w-1/2 bg-gray-200 p-6 flex items-center justify-center"
-            >
-              <div class="text-center">
-                <img
-                  src="image_insta-meme.png"
-                  alt="Capture d'écran du projet"
-                  class="rounded-lg mb-4"
-                />
-                <i class="fas fa-laptop-code text-6xl text-gray-500 mb-4"></i>
-                <p class="text-gray-600">Capture d'écran du projet</p>
-
-                <button
-                  class="w-full bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition"
-                >
-                  <a
-                    href="https://github.com/StonksInd/insta-meme"
-                    class="flex items-center justify-center"
-                  >
-                    Voir le code <i class="fab fa-github ml-2"></i>
-                  </a>
-                </button>
+            <span class="project-arrow">+</span>
+          </div>
+          <div class="project-body">
+            <div class="project-description">
+              <h4>Contexte</h4>
+              <p>
+                Site web de partage d'images de type réseau social, développé
+                dans un cadre scolaire.
+              </p>
+              <h4>Ce que j'ai fait</h4>
+              <ul>
+                <li>Conception complète de la base de données</li>
+                <li>Développement back-end en PHP</li>
+                <li>Interface utilisateur avec Tailwind CSS</li>
+                <li>Système d'authentification et de création de mèmes</li>
+              </ul>
+              <h4>Stack</h4>
+              <div class="tags" style="margin-top: 0.4rem">
+                <span class="tag">HTML / CSS</span>
+                <span class="tag">Tailwind</span>
+                <span class="tag">PHP</span>
+                <span class="tag">MySQL</span>
               </div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/StonksInd/insta-meme"
+                  target="_blank"
+                  class="project-link"
+                >
+                  <svg
+                    width="13"
+                    height="13"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"
+                    />
+                  </svg>
+                  Code source
+                </a>
+              </div>
+            </div>
+            <div class="project-visual">
+              <img
+                src="image_insta-meme.png"
+                alt="Capture Insta-Meme"
+                onerror="
+                  this.parentElement.innerHTML =
+                    '<div class=\'no-img\'><svg width=\'40\' height=\'40\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1\' viewBox=\'0 0 24 24\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\'/><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'/><path d=\'m21 15-5-5L5 21\'/></svg><span>image_insta-meme.png</span></div>'
+                "
+              />
             </div>
           </div>
         </div>
 
-        <!-- Projet 2 -->
-        <div class="mb-16 bg-gray-50 rounded-lg overflow-hidden shadow-lg">
-          <div class="md:flex">
-            <div class="md:w-1/2 p-6">
-              <h3 class="text-2xl font-semibold mb-4">RPG python</h3>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">Contexte</h4>
-              <p class="text-gray-600 mb-4">
-                Développement d'un RPG python en console dans le cadre d'un
-                projet scolaire.
-              </p>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">Objectifs</h4>
-              <ul class="list-disc pl-5 text-gray-600 mb-4">
-                <li>Créer une interface utilisateur intuitive</li>
-                <li>Gérer les instances de classes</li>
-                <li>Implémenter des fonctionnalités de combat</li>
-              </ul>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">
-                Technologies
-              </h4>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >Python</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >POO</span
-                >
-              </div>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">Mon rôle</h4>
-              <p class="text-gray-600 mb-4">
-                Développement de tout le projet, de la conception à
-                l'implémentation.
-              </p>
-            </div>
-            <div
-              class="md:w-1/2 bg-gray-200 p-6 flex items-center justify-center"
-            >
-              <div class="text-center">
-                <img
-                  src="image_RPG.png"
-                  alt="Capture d'écran du projet"
-                  class="rounded-lg mb-4"
-                />
-                <i class="fas fa-laptop-code text-6xl text-gray-500 mb-4"></i>
-                <p class="text-gray-600">Capture d'écran du projet</p>
-                <button
-                  class="w-full bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition"
-                >
-                  <a
-                    href="https://github.com/StonksInd/RPG"
-                    class="flex items-center justify-center"
-                  >
-                    Voir le code <i class="fab fa-github ml-2"></i>
-                  </a>
-                </button>
+        <!-- PROJET 2 -->
+        <div class="project-item" data-index="1">
+          <div class="project-header">
+            <div class="project-meta">
+              <span class="project-num">02</span>
+              <span class="project-name">RPG Python</span>
+              <div class="project-badges">
+                <span class="badge">Python</span>
+                <span class="badge gray">POO</span>
               </div>
             </div>
+            <span class="project-arrow">+</span>
           </div>
-        </div>
-
-        <!-- Projet 3 -->
-
-        <div class="mb-16 bg-gray-50 rounded-lg overflow-hidden shadow-lg">
-          <div class="md:flex">
-            <div class="md:w-1/2 p-6">
-              <h3 class="text-2xl font-semibold mb-4">Demineur</h3>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">Contexte</h4>
-              <p class="text-gray-600 mb-4">
-                Développement d'une application web de demineur en JavaScript
-                dans le cadre d'un projet scolaire.
+          <div class="project-body">
+            <div class="project-description">
+              <h4>Contexte</h4>
+              <p>
+                RPG en console développé en Python dans le cadre d'un projet
+                scolaire.
               </p>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">Objectifs</h4>
-              <ul class="list-disc pl-5 text-gray-600 mb-4">
-                <li>Créer une interface utilisateur intuitive</li>
-                <li>Utiliser de la recursivité</li>
-                <li>Génerer un grille de demineur</li>
-                <li>Implémenter des fonctionnalités de jeu</li>
-              </ul>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">
-                Technologies
-              </h4>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >JavaScript</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >Tailwindcss</span
-                >
-              </div>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">Mon rôle</h4>
-              <p class="text-gray-600 mb-4">
-                Développement de tout le projet, de la conception à
-                l'implémentation.
-              </p>
-            </div>
-            <div
-              class="md:w-1/2 bg-gray-200 p-6 flex items-center justify-center"
-            >
-              <div class="text-center">
-                <img
-                  src="image_demineur.png"
-                  alt="Capture d'écran du projet"
-                  class="rounded-lg mb-4 w-full max-w-xs mx-auto"
-                />
-                <i class="fas fa-laptop-code text-6xl text-gray-500 mb-4"></i>
-                <p class="text-gray-600">Capture d'écran du projet</p>
-                <div class="space-y-2">
-                  <button
-                    class="w-full bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition"
-                  >
-                    <a
-                      href="https://github.com/StonksInd/demineur"
-                      class="flex items-center justify-center"
-                    >
-                      Voir le code <i class="fab fa-github ml-2"></i>
-                    </a>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Projet 4 -->
-        <div class="mb-16 bg-gray-50 rounded-lg overflow-hidden shadow-lg">
-          <div class="md:flex">
-            <div class="md:w-1/2 p-6">
-              <h3 class="text-2xl font-semibold mb-4">Pokédex Interactif</h3>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">Contexte</h4>
-              <p class="text-gray-600 mb-4">
-                Développement d'une application web Pokédex interactive avec
-                Next.js et TypeScript, intégrant une API REST pour afficher et
-                filtrer les données des Pokémon.
-              </p>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">Objectifs</h4>
-              <ul class="list-disc pl-5 text-gray-600 mb-4">
-                <li>Créer une interface utilisateur moderne et responsive</li>
-                <li>Intégrer une API REST externe</li>
+              <h4>Ce que j'ai fait</h4>
+              <ul>
+                <li>Architecture orientée objet complète</li>
                 <li>
-                  Implémenter des fonctionnalités de recherche et filtrage
+                  Gestion des instances de classes (joueur, ennemis, items)
                 </li>
-                <li>Développer un système de tri dynamique</li>
-                <li>Créer des modales détaillées pour chaque Pokémon</li>
+                <li>Système de combat au tour par tour</li>
+                <li>Interface console intuitive</li>
               </ul>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">
-                Technologies
-              </h4>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >Next.js</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >TypeScript</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >React</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >TailwindCSS</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >Material-UI</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >API REST</span
-                >
+              <h4>Stack</h4>
+              <div class="tags" style="margin-top: 0.4rem">
+                <span class="tag">Python</span>
+                <span class="tag">POO</span>
               </div>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">Mon rôle</h4>
-              <p class="text-gray-600 mb-4">
-                Développement complet de l'application, de l'architecture
-                technique à l'interface utilisateur, incluant la gestion des
-                états et l'intégration API.
-              </p>
-            </div>
-            <div
-              class="md:w-1/2 bg-gray-200 p-6 flex items-center justify-center"
-            >
-              <div class="text-center">
-                <img
-                  src="image_pokedex.png"
-                  alt="Capture d'écran du projet"
-                  class="rounded-lg mb-4"
-                />
-                <i class="fas fa-laptop-code text-6xl text-gray-500 mb-4"></i>
-                <p class="text-gray-600">Capture d'écran du projet</p>
-                <div class="space-y-2">
-                  <button
-                    class="w-full bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition"
+              <div class="project-links">
+                <a
+                  href="https://github.com/StonksInd/RPG"
+                  target="_blank"
+                  class="project-link"
+                >
+                  <svg
+                    width="13"
+                    height="13"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
                   >
-                    <a
-                      href="https://github.com/StonksInd/Ketamon"
-                      class="flex items-center justify-center"
-                    >
-                      Voir le code <i class="fab fa-github ml-2"></i>
-                    </a>
-                  </button>
-                </div>
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"
+                    />
+                  </svg>
+                  Code source
+                </a>
               </div>
+            </div>
+            <div class="project-visual">
+              <img
+                src="image_RPG.png"
+                alt="Capture RPG"
+                onerror="
+                  this.parentElement.innerHTML =
+                    '<div class=\'no-img\'><svg width=\'40\' height=\'40\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1\' viewBox=\'0 0 24 24\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\'/><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'/><path d=\'m21 15-5-5L5 21\'/></svg><span>image_RPG.png</span></div>'
+                "
+              />
             </div>
           </div>
         </div>
-        <!-- Projet 5 -->
 
-        <div class="mb-16 bg-gray-50 rounded-lg overflow-hidden shadow-lg">
-          <div class="md:flex">
-            <div class="md:w-1/2 p-6">
-              <h3 class="text-2xl font-semibold mb-4">
-                AnimeCollect - Application Mobile
-              </h3>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">Contexte</h4>
-              <p class="text-gray-600 mb-4">
-                Développement d'une application mobile de suivi d'animés avec
-                React Native et Expo, incluant une collection personnelle, un
-                système de progression par épisodes, et une intégration avec
-                l'API Kitsu pour la recherche et les données.
-              </p>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">Objectifs</h4>
-              <ul class="list-disc pl-5 text-gray-600 mb-4">
-                <li>Créer une interface mobile moderne et intuitive</li>
-                <li>Implémenter un système de collection personnelle</li>
-                <li>Développer un suivi de progression par épisodes</li>
-                <li>Intégrer l'API Kitsu pour les données d'animés</li>
-                <li>Créer une base de données locale avec SQLite</li>
-                <li>Implémenter la navigation entre les écrans</li>
-              </ul>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">
-                Technologies
-              </h4>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >React Native</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >Expo</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >TypeScript</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >Expo Router</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >SQLite</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >Drizzle ORM</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >TailwindCSS</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >API Kitsu</span
-                >
+        <!-- PROJET 3 -->
+        <div class="project-item" data-index="2">
+          <div class="project-header">
+            <div class="project-meta">
+              <span class="project-num">03</span>
+              <span class="project-name">Démineur</span>
+              <div class="project-badges">
+                <span class="badge">JavaScript</span>
+                <span class="badge gray">Récursivité</span>
               </div>
+            </div>
+            <span class="project-arrow">+</span>
+          </div>
+          <div class="project-body">
+            <div class="project-description">
+              <h4>Contexte</h4>
+              <p>
+                Démineur web en JavaScript pur, développé dans le cadre
+                scolaire.
+              </p>
+              <h4>Ce que j'ai fait</h4>
+              <ul>
+                <li>Génération procédurale de la grille</li>
+                <li>Algorithme de flood-fill récursif</li>
+                <li>Interface jouable avec Tailwind</li>
+                <li>Gestion des états de jeu (victoire / défaite)</li>
+              </ul>
+              <h4>Stack</h4>
+              <div class="tags" style="margin-top: 0.4rem">
+                <span class="tag">JavaScript</span>
+                <span class="tag">Tailwind CSS</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/StonksInd/demineur"
+                  target="_blank"
+                  class="project-link"
+                >
+                  <svg
+                    width="13"
+                    height="13"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"
+                    />
+                  </svg>
+                  Code source
+                </a>
+              </div>
+            </div>
+            <div class="project-visual">
+              <img
+                src="image_demineur.png"
+                alt="Capture Démineur"
+                onerror="
+                  this.parentElement.innerHTML =
+                    '<div class=\'no-img\'><svg width=\'40\' height=\'40\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1\' viewBox=\'0 0 24 24\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\'/><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'/><path d=\'m21 15-5-5L5 21\'/></svg><span>image_demineur.png</span></div>'
+                "
+              />
+            </div>
+          </div>
+        </div>
 
-              <h4 class="text-lg font-medium text-gray-700 mb-2">
-                Fonctionnalités
-              </h4>
-              <ul class="list-disc pl-5 text-gray-600 mb-4">
-                <li>Recherche d'animés en temps réel</li>
-                <li>Ajout à une collection personnelle</li>
+        <!-- PROJET 4 -->
+        <div class="project-item" data-index="3">
+          <div class="project-header">
+            <div class="project-meta">
+              <span class="project-num">04</span>
+              <span class="project-name">Ketamon — Pokédex Interactif</span>
+              <div class="project-badges">
+                <span class="badge">Next.js</span>
+                <span class="badge blue">TypeScript</span>
+                <span class="badge gray">API REST</span>
+              </div>
+            </div>
+            <span class="project-arrow">+</span>
+          </div>
+          <div class="project-body">
+            <div class="project-description">
+              <h4>Contexte</h4>
+              <p>
+                Application Pokédex avec Next.js et TypeScript, intégrant la
+                PokeAPI pour afficher et filtrer les données.
+              </p>
+              <h4>Ce que j'ai fait</h4>
+              <ul>
+                <li>Interface moderne et responsive</li>
+                <li>Intégration API REST externe (PokeAPI)</li>
+                <li>Recherche, filtrage et tri dynamique</li>
+                <li>Modales détaillées par Pokémon</li>
+                <li>Gestion des états React</li>
+              </ul>
+              <h4>Stack</h4>
+              <div class="tags" style="margin-top: 0.4rem">
+                <span class="tag">Next.js</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">React</span>
+                <span class="tag">Tailwind</span>
+                <span class="tag">Material-UI</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/StonksInd/Ketamon"
+                  target="_blank"
+                  class="project-link"
+                >
+                  <svg
+                    width="13"
+                    height="13"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"
+                    />
+                  </svg>
+                  Code source
+                </a>
+              </div>
+            </div>
+            <div class="project-visual">
+              <img
+                src="image_pokedex.png"
+                alt="Capture Pokédex"
+                onerror="
+                  this.parentElement.innerHTML =
+                    '<div class=\'no-img\'><svg width=\'40\' height=\'40\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1\' viewBox=\'0 0 24 24\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\'/><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'/><path d=\'m21 15-5-5L5 21\'/></svg><span>image_pokedex.png</span></div>'
+                "
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJET 5 -->
+        <div class="project-item" data-index="4">
+          <div class="project-header">
+            <div class="project-meta">
+              <span class="project-num">05</span>
+              <span class="project-name">AnimeCollect — App Mobile</span>
+              <div class="project-badges">
+                <span class="badge">React Native</span>
+                <span class="badge blue">SQLite</span>
+                <span class="badge gray">Expo</span>
+              </div>
+            </div>
+            <span class="project-arrow">+</span>
+          </div>
+          <div class="project-body">
+            <div class="project-description">
+              <h4>Contexte</h4>
+              <p>
+                Application mobile de suivi d'animés avec collection
+                personnelle, progression par épisodes et intégration API Kitsu.
+              </p>
+              <h4>Ce que j'ai fait</h4>
+              <ul>
+                <li>Architecture mobile complète (Expo Router)</li>
+                <li>Base de données locale SQLite avec Drizzle ORM</li>
+                <li>Intégration API Kitsu (recherche temps réel)</li>
                 <li>Suivi de progression par épisodes</li>
-                <li>Affichage des détails d'animés et d'épisodes</li>
-                <li>Stockage local avec SQLite</li>
                 <li>Interface responsive et moderne</li>
               </ul>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">Mon rôle</h4>
-              <p class="text-gray-600 mb-4">
-                Développement complet de l'application mobile, de l'architecture
-                à l'interface utilisateur, incluant l'intégration de l'API, la
-                gestion de la base de données locale et l'implémentation de
-                toutes les fonctionnalités.
-              </p>
-            </div>
-            <div
-              class="md:w-1/2 bg-gray-200 p-6 flex items-center justify-center"
-            >
-              <div class="text-center">
-                <div
-                  class="w-full max-w-xs mx-auto mb-4 bg-white rounded-2xl shadow-lg p-4"
+              <h4>Stack</h4>
+              <div class="tags" style="margin-top: 0.4rem">
+                <span class="tag">React Native</span>
+                <span class="tag">Expo</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">SQLite</span>
+                <span class="tag">Drizzle ORM</span>
+                <span class="tag">API Kitsu</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/StonksInd/AnimeCollectV2"
+                  target="_blank"
+                  class="project-link"
                 >
-                  <div
-                    class="bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl p-4 text-white mb-3"
+                  <svg
+                    width="13"
+                    height="13"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
                   >
-                    <h5 class="font-bold text-lg">ANIME COLLECT</h5>
-                    <p class="text-sm opacity-90">Ma Collection d'Animés</p>
-                  </div>
-                  <div class="space-y-2 text-left">
-                    <div class="bg-blue-100 rounded-lg p-2 flex items-center">
-                      <div class="w-12 h-16 bg-gray-300 rounded mr-2"></div>
-                      <div>
-                        <div class="text-xs font-medium text-blue-800">
-                          Attack on Titan
-                        </div>
-                        <div class="text-xs text-gray-500">25/25 épisodes</div>
-                      </div>
-                    </div>
-                    <div class="bg-green-100 rounded-lg p-2 flex items-center">
-                      <div class="w-12 h-16 bg-gray-300 rounded mr-2"></div>
-                      <div>
-                        <div class="text-xs font-medium text-green-800">
-                          Demon Slayer
-                        </div>
-                        <div class="text-xs text-gray-500">12/26 épisodes</div>
-                      </div>
-                    </div>
-                    <div class="bg-yellow-100 rounded-lg p-2 flex items-center">
-                      <div class="w-12 h-16 bg-gray-300 rounded mr-2"></div>
-                      <div>
-                        <div class="text-xs font-medium text-yellow-800">
-                          One Piece
-                        </div>
-                        <div class="text-xs text-gray-500">1000+ épisodes</div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="mt-3 flex justify-around border-t pt-2">
-                    <i class="fas fa-home text-purple-500"></i>
-                    <i class="fas fa-search text-gray-400"></i>
-                    <i class="fas fa-bookmark text-gray-400"></i>
-                  </div>
-                </div>
-                <i class="fas fa-mobile-alt text-6xl text-gray-500 mb-4"></i>
-                <p class="text-gray-600 mb-2">
-                  Application Mobile React Native
-                </p>
-                <p class="text-sm text-gray-500">
-                  Suivi et collection d'animés
-                </p>
-                <div class="space-y-2 mt-4">
-                  <button
-                    class="w-full bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition"
-                  >
-                    <a
-                      href="https://github.com/StonksInd/AnimeCollectV2"
-                      class="flex items-center justify-center"
-                    >
-                      Voir le code <i class="fab fa-github ml-2"></i>
-                    </a>
-                  </button>
-                </div>
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"
+                    />
+                  </svg>
+                  Code source
+                </a>
+              </div>
+            </div>
+            <div class="project-visual">
+              <div
+                class="no-img"
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  gap: 0.5rem;
+                  color: var(--muted);
+                  font-family: var(--font-mono);
+                  font-size: 0.75rem;
+                  padding: 2rem;
+                "
+              >
+                <svg
+                  width="40"
+                  height="40"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1"
+                  viewBox="0 0 24 24"
+                  style="opacity: 0.3"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <path d="m21 15-5-5L5 21" />
+                </svg>
+                <span>image_animecollect.png</span>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Projet Location de Motos -->
-        <div class="mb-16 bg-gray-50 rounded-lg overflow-hidden shadow-lg">
-          <div class="md:flex">
-            <div class="md:w-1/2 p-6">
-              <h3 class="text-2xl font-semibold mb-4">
-                Système de Location de Motos
-              </h3>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">Contexte</h4>
-              <p class="text-gray-600 mb-4">
+        <!-- PROJET 6 -->
+        <div class="project-item" data-index="5">
+          <div class="project-header">
+            <div class="project-meta">
+              <span class="project-num">06</span>
+              <span class="project-name">MyBikeRent — Base de données</span>
+              <div class="project-badges">
+                <span class="badge">MySQL</span>
+                <span class="badge gray">Triggers</span>
+              </div>
+            </div>
+            <span class="project-arrow">+</span>
+          </div>
+          <div class="project-body">
+            <div class="project-description">
+              <h4>Contexte</h4>
+              <p>
                 Conception et développement d'une base de données complète pour
-                un système de location de motos, incluant la gestion des
-                utilisateurs, des réservations, des paiements et des avis
-                clients.
+                un système de location de motos.
               </p>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">Objectifs</h4>
-              <ul class="list-disc pl-5 text-gray-600 mb-4">
-                <li>
-                  Créer une architecture de base de données robuste et sécurisée
-                </li>
-                <li>
-                  Implémenter un système de gestion des rôles et permissions
-                </li>
-                <li>
-                  Développer des procédures stockées pour les opérations
-                  critiques
-                </li>
-                <li>
-                  Mettre en place un système de sauvegarde et maintenance
-                  automatique
-                </li>
-                <li>
-                  Créer des vues optimisées pour différents types d'utilisateurs
-                </li>
+              <h4>Ce que j'ai fait</h4>
+              <ul>
+                <li>Modélisation MCD / MLD</li>
+                <li>Scripts SQL complets (tables, vues, procédures)</li>
+                <li>Système multi-rôles (Client, Propriétaire, Admin)</li>
+                <li>Triggers de sécurité et de cohérence</li>
+                <li>Sauvegarde et maintenance automatiques</li>
               </ul>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">
-                Technologies
-              </h4>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >MySQL</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >SQL</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >Procédures Stockées</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >Triggers</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >Vues SQL</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >Sécurité DB</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >PlantUML</span
-                >
+              <h4>Stack</h4>
+              <div class="tags" style="margin-top: 0.4rem">
+                <span class="tag">MySQL</span>
+                <span class="tag">Procédures stockées</span>
+                <span class="tag">Triggers</span>
+                <span class="tag">PlantUML</span>
               </div>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">
-                Fonctionnalités
-              </h4>
-              <ul class="list-disc pl-5 text-gray-600 mb-4">
-                <li>
-                  Gestion multi-rôles (Client, Propriétaire, Administrateur)
-                </li>
-                <li>
-                  Système de réservation avec vérification des disponibilités
-                </li>
-                <li>Gestion automatisée des paiements et facturation</li>
-                <li>Système d'avis et de notation</li>
-                <li>Sauvegarde et restauration automatique</li>
-                <li>Maintenance programmée de la base de données</li>
-              </ul>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">Mon rôle</h4>
-              <p class="text-gray-600 mb-4">
-                Conception complète de l'architecture de données, modélisation
-                MCD/MLD, développement des scripts SQL, implémentation de la
-                sécurité et des procédures de maintenance.
-              </p>
-            </div>
-            <div
-              class="md:w-1/2 bg-gray-200 p-6 flex items-center justify-center"
-            >
-              <div class="text-center">
-                <i class="fas fa-database text-6xl text-gray-500 mb-4"></i>
-                <p class="text-gray-600 mb-4">Base de données MySQL</p>
-                <div class="bg-white p-4 rounded-lg shadow-sm mb-4">
-                  <h5 class="font-semibold text-gray-800 mb-2">
-                    Structure principale
-                  </h5>
-                  <ul class="text-sm text-gray-600 space-y-1">
-                    <li>• 5 tables principales</li>
-                    <li>• 3 rôles utilisateurs</li>
-                    <li>• 8 procédures stockées</li>
-                    <li>• 3 vues spécialisées</li>
-                    <li>• Triggers de sécurité</li>
-                  </ul>
-                </div>
-                <div class="space-y-2 mt-4">
-                  <button
-                    class="w-full bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition"
+              <div class="project-links">
+                <a
+                  href="https://github.com/StonksInd/MyBikeRent"
+                  target="_blank"
+                  class="project-link"
+                >
+                  <svg
+                    width="13"
+                    height="13"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
                   >
-                    <a
-                      href="https://github.com/StonksInd/MyBikeRent"
-                      class="flex items-center justify-center"
-                    >
-                      Voir le code <i class="fab fa-github ml-2"></i>
-                    </a>
-                  </button>
-                </div>
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"
+                    />
+                  </svg>
+                  Code source
+                </a>
               </div>
             </div>
-          </div>
-        </div>
-
-        <!-- Projet 5 -->
-        <div class="mb-16 bg-gray-50 rounded-lg overflow-hidden shadow-lg">
-          <div class="md:flex">
-            <div class="md:w-1/2 p-6">
-              <h3 class="text-2xl font-semibold mb-4">
-                Keep Note - Application Mobile
-              </h3>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">Contexte</h4>
-              <p class="text-gray-600 mb-4">
-                Développement d'une application mobile de prise de notes avec
-                React Native et Expo, incluant un système d'authentification
-                avancé (QR Code), gestion de tâches et catégorisation des notes.
-              </p>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">Objectifs</h4>
-              <ul class="list-disc pl-5 text-gray-600 mb-4">
-                <li>Créer une interface mobile moderne et intuitive</li>
-                <li>Implémenter l'authentification par QR Code</li>
-                <li>Développer un système de gestion de notes et tâches</li>
-                <li>
-                  Intégrer une API REST pour la synchronisation des données
-                </li>
-                <li>Créer un système de catégorisation avancé</li>
-                <li>Implémenter des tests unitaires et d'intégration</li>
-              </ul>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">
-                Technologies
-              </h4>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >React Native</span
+            <div class="project-visual" style="padding: 1.5rem">
+              <div
+                style="
+                  background: var(--bg);
+                  border: 1px solid var(--border);
+                  border-radius: 6px;
+                  padding: 1.2rem;
+                  width: 100%;
+                "
+              >
+                <p
+                  style="
+                    font-family: var(--font-mono);
+                    font-size: 0.7rem;
+                    color: var(--accent);
+                    margin-bottom: 0.8rem;
+                    letter-spacing: 0.08em;
+                  "
                 >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >Expo</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >TypeScript</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >React</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >TailwindCSS</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >Jest</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >API REST</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >Expo Camera</span
-                >
-              </div>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">Mon rôle</h4>
-              <p class="text-gray-600 mb-4">
-                Développement complet de l'application mobile, de l'architecture
-                à l'interface utilisateur, incluant l'implémentation des
-                fonctionnalités avancées et la mise en place des tests.
-              </p>
-            </div>
-            <div
-              class="md:w-1/2 bg-gray-200 p-6 flex items-center justify-center"
-            >
-              <div class="text-center">
-                <div
-                  class="w-full max-w-xs mx-auto mb-4 bg-white rounded-2xl shadow-lg p-4"
-                >
-                  <div
-                    class="bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl p-4 text-white mb-3"
-                  >
-                    <h5 class="font-bold text-lg">KEEP NOTE</h5>
-                    <p class="text-sm opacity-90">Mes Notes & Tâches</p>
-                  </div>
-                  <div class="space-y-2 text-left">
-                    <div class="bg-yellow-100 rounded-lg p-2">
-                      <div class="text-xs font-medium text-yellow-800">
-                        📝 Note importante
-                      </div>
-                    </div>
-                    <div class="bg-green-100 rounded-lg p-2">
-                      <div class="text-xs font-medium text-green-800">
-                        ✅ Tâche terminée
-                      </div>
-                    </div>
-                    <div class="bg-blue-100 rounded-lg p-2">
-                      <div class="text-xs font-medium text-blue-800">
-                        📋 Liste de courses
-                      </div>
-                    </div>
-                  </div>
-                  <div class="mt-3 flex justify-around border-t pt-2">
-                    <i class="fas fa-home text-blue-500"></i>
-                    <i class="fas fa-tasks text-gray-400"></i>
-                    <i class="fas fa-sticky-note text-gray-400"></i>
-                  </div>
-                </div>
-                <i class="fas fa-mobile-alt text-6xl text-gray-500 mb-4"></i>
-                <p class="text-gray-600">Application Mobile React Native</p>
-                <div class="space-y-2 mt-4">
-                  <button
-                    class="w-full bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition"
-                  >
-                    <a
-                      href="https://github.com/StonksInd/takeNote"
-                      class="flex items-center justify-center"
-                    >
-                      Voir le code <i class="fab fa-github ml-2"></i>
-                    </a>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Projet  -->
-        <div class="mb-16 bg-gray-50 rounded-lg overflow-hidden shadow-lg">
-          <div class="md:flex">
-            <div class="md:w-1/2 p-6">
-              <h3 class="text-2xl font-semibold mb-4">Scraper & Collection</h3>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">Contexte</h4>
-              <p class="text-gray-600 mb-4">
-                Développement d'un scraper web automatisé pour extraire les
-                données d'un site de livres avec Python, BeautifulSoup et
-                gestion CSV. Projet axé sur l'automatisation et le traitement de
-                données structurées.
-              </p>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">Objectifs</h4>
-              <ul class="list-disc pl-5 text-gray-600 mb-4">
-                <li>Automatiser l'extraction de données produits</li>
-                <li>Naviguer automatiquement entre les pages et catégories</li>
-                <li>Gérer le téléchargement d'images avec noms sécurisés</li>
-                <li>Structurer les données en format CSV</li>
-                <li>Implémenter une architecture modulaire et réutilisable</li>
-              </ul>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">
-                Technologies
-              </h4>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >Python</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >BeautifulSoup</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >Requests</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >CSV</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >Web Scraping</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >Automation</span
-                >
-              </div>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">
-                Fonctionnalités
-              </h4>
-              <ul class="list-disc pl-5 text-gray-600 mb-4">
-                <li>Scraping automatique multi-catégories</li>
-                <li>Navigation intelligente entre pages</li>
-                <li>
-                  Extraction de données structurées (titre, prix, stock, etc.)
-                </li>
-                <li>Téléchargement automatique d'images</li>
-                <li>Gestion d'erreurs et noms de fichiers sécurisés</li>
-                <li>Export CSV organisé par catégorie</li>
-              </ul>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">Mon rôle</h4>
-              <p class="text-gray-600 mb-4">
-                Développement complet du système de scraping, conception de
-                l'architecture modulaire, implémentation de la logique de
-                navigation automatique et gestion des données extraites.
-              </p>
-            </div>
-            <div
-              class="md:w-1/2 bg-gray-200 p-6 flex items-center justify-center"
-            >
-              <div class="text-center">
-                <div
-                  class="w-full max-w-sm mx-auto mb-4 bg-white rounded-lg shadow-lg p-4"
-                >
-                  <div
-                    class="bg-gradient-to-br from-green-500 to-blue-600 rounded-lg p-4 text-white mb-3"
-                  >
-                    <h5 class="font-bold text-lg">WEB SCRAPER</h5>
-                    <p class="text-sm opacity-90">Extraction Automatisée</p>
-                  </div>
-                  <div class="space-y-2 text-left text-sm">
-                    <div
-                      class="bg-gray-100 rounded p-2 flex items-center justify-between"
-                    >
-                      <span class="text-gray-700">📊 Données extraites</span>
-                      <span class="text-green-600 font-semibold">1,000+</span>
-                    </div>
-                    <div
-                      class="bg-gray-100 rounded p-2 flex items-center justify-between"
-                    >
-                      <span class="text-gray-700">📁 Catégories</span>
-                      <span class="text-blue-600 font-semibold">50+</span>
-                    </div>
-                    <div
-                      class="bg-gray-100 rounded p-2 flex items-center justify-between"
-                    >
-                      <span class="text-gray-700">🖼️ Images</span>
-                      <span class="text-purple-600 font-semibold">Auto DL</span>
-                    </div>
-                    <div
-                      class="bg-gray-100 rounded p-2 flex items-center justify-between"
-                    >
-                      <span class="text-gray-700">📄 Format</span>
-                      <span class="text-orange-600 font-semibold">CSV</span>
-                    </div>
-                  </div>
-                  <div class="mt-3 pt-2 border-t">
-                    <div
-                      class="flex items-center justify-center text-xs text-gray-500"
-                    >
-                      <span
-                        class="w-2 h-2 bg-green-500 rounded-full mr-2"
-                      ></span>
-                      Scraping en cours...
-                    </div>
-                  </div>
-                </div>
-                <i class="fas fa-robot text-6xl text-gray-500 mb-4"></i>
-                <p class="text-gray-600 mb-2">Scraper Web Automatisé</p>
-                <p class="text-sm text-gray-500">
-                  Extraction et traitement de données
+                  STRUCTURE DB
                 </p>
-                <div class="space-y-2 mt-4">
-                  <button
-                    class="w-full bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition"
-                  >
-                    <a
-                      href="https://github.com/StonksInd/py-books-to-scrape"
-                      class="flex items-center justify-center"
-                    >
-                      Voir le code <i class="fab fa-github ml-2"></i>
-                    </a>
-                  </button>
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.4rem;
+                    font-family: var(--font-mono);
+                    font-size: 0.78rem;
+                    color: var(--text-dim);
+                  "
+                >
+                  <span>▸ 5 tables principales</span>
+                  <span>▸ 3 rôles utilisateurs</span>
+                  <span>▸ 8 procédures stockées</span>
+                  <span>▸ 3 vues spécialisées</span>
+                  <span>▸ Triggers de sécurité</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Projet Safe Student -->
-        <div class="mb-16 bg-gray-50 rounded-lg overflow-hidden shadow-lg">
-          <div class="md:flex">
-            <div class="md:w-1/2 p-6">
-              <h3 class="text-2xl font-semibold mb-4">
-                Safe Student - Coffre-fort numérique étudiant
-              </h3>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">Contexte</h4>
-              <p class="text-gray-600 mb-4">
-                Développement d'un coffre-fort numérique révolutionnaire pour
-                étudiants avec architecture zero-server. Première application où
-                même les développeurs ne peuvent pas accéder aux documents
-                stockés.
+        <!-- PROJET 7 -->
+        <div class="project-item" data-index="6">
+          <div class="project-header">
+            <div class="project-meta">
+              <span class="project-num">07</span>
+              <span class="project-name">Keep Note — App Mobile</span>
+              <div class="project-badges">
+                <span class="badge">React Native</span>
+                <span class="badge blue">Jest</span>
+                <span class="badge gray">QR Auth</span>
+              </div>
+            </div>
+            <span class="project-arrow">+</span>
+          </div>
+          <div class="project-body">
+            <div class="project-description">
+              <h4>Contexte</h4>
+              <p>
+                Application mobile de prise de notes avec authentification par
+                QR Code, gestion de tâches et catégorisation avancée.
               </p>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">Objectifs</h4>
-              <ul class="list-disc pl-5 text-gray-600 mb-4">
-                <li>
-                  Sécuriser les documents académiques avec chiffrement AES-256
-                </li>
-                <li>Créer une architecture zero-server (100% côté client)</li>
-                <li>Implémenter un système zero-knowledge prouvable</li>
-                <li>Développer une interface intuitive pour étudiants</li>
-                <li>Assurer la compatibilité multi-navigateurs</li>
+              <h4>Ce que j'ai fait</h4>
+              <ul>
+                <li>Authentification par QR Code (Expo Camera)</li>
+                <li>Système de notes et tâches catégorisées</li>
+                <li>Synchronisation via API REST</li>
+                <li>Tests unitaires et d'intégration avec Jest</li>
               </ul>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">
-                Technologies
-              </h4>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                >
-                  HTML5/TailwindCSS
-                </span>
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                >
-                  JavaScript ES6
-                </span>
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                >
-                  Web Crypto API
-                </span>
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                >
-                  IndexedDB
-                </span>
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                >
-                  JSZip
-                </span>
+              <h4>Stack</h4>
+              <div class="tags" style="margin-top: 0.4rem">
+                <span class="tag">React Native</span>
+                <span class="tag">Expo</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">Jest</span>
+                <span class="tag">Expo Camera</span>
               </div>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">Mon rôle</h4>
-              <p class="text-gray-600 mb-4">
-                Développeur front-end & UX/UI : Conception de l'architecture
-                sécuritaire, développement de l'interface utilisateur
-                (front-end), design UX/UI et implémentation du chiffrement
-                AES-256-GCM. Coordination d'une équipe de 4 développeurs.
-              </p>
-            </div>
-
-            <div
-              class="md:w-1/2 bg-gradient-to-br from-blue-100 to-purple-100 p-6 flex items-center justify-center"
-            >
-              <div class="text-center">
-                <img
-                  src="image_safeStudent.png"
-                  alt="Capture d'écran du projet Safe Student"
-                  class="rounded-lg mb-4"
-                />
-
-                <!-- Boutons d'action -->
-                <div class="space-y-3">
-                  <button
-                    class="w-full bg-gray-800 text-white px-4 py-2 rounded-lg hover:bg-gray-900 transition duration-200 shadow-md"
+              <div class="project-links">
+                <a
+                  href="https://github.com/StonksInd/takeNote"
+                  target="_blank"
+                  class="project-link"
+                >
+                  <svg
+                    width="13"
+                    height="13"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
                   >
-                    <a href="#" class="flex items-center justify-center">
-                      <svg
-                        class="w-4 h-4 mr-2"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-                        />
-                      </svg>
-                      Code source
-                    </a>
-                  </button>
-                </div>
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"
+                    />
+                  </svg>
+                  Code source
+                </a>
+              </div>
+            </div>
+            <div class="project-visual">
+              <div
+                class="no-img"
+                style="
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  gap: 0.5rem;
+                  color: var(--muted);
+                  font-family: var(--font-mono);
+                  font-size: 0.75rem;
+                  padding: 2rem;
+                "
+              >
+                <svg
+                  width="40"
+                  height="40"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1"
+                  viewBox="0 0 24 24"
+                  style="opacity: 0.3"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <path d="m21 15-5-5L5 21" />
+                </svg>
+                <span>image_keepnote.png</span>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Projet WeekPal -->
-        <div class="mb-16 bg-gray-50 rounded-lg overflow-hidden shadow-lg">
-          <div class="md:flex">
-            <div class="md:w-1/2 p-6">
-              <h3 class="text-2xl font-semibold mb-4">WeekPal</h3>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">Contexte</h4>
-              <p class="text-gray-600 mb-4">
-                Développement d'une application Web pour organiser sa semaine de
-                manière visuelle et interactive. Chaque carte représente un
-                projet ou une activité planifiée dans un emploi du temps.
+        <!-- PROJET 8 -->
+        <div class="project-item" data-index="7">
+          <div class="project-header">
+            <div class="project-meta">
+              <span class="project-num">08</span>
+              <span class="project-name">Books Scraper</span>
+              <div class="project-badges">
+                <span class="badge">Python</span>
+                <span class="badge gray">BeautifulSoup</span>
+              </div>
+            </div>
+            <span class="project-arrow">+</span>
+          </div>
+          <div class="project-body">
+            <div class="project-description">
+              <h4>Contexte</h4>
+              <p>
+                Scraper web automatisé pour extraire les données d'un catalogue
+                de livres, avec export CSV et téléchargement d'images.
               </p>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">Objectifs</h4>
-              <ul class="list-disc pl-5 text-gray-600 mb-4">
-                <li>Organiser les tâches par jour de la semaine</li>
-                <li>Permettre la glisser-déposer intuitive des cartes</li>
-                <li>Sauvegarder les modifications en temps réel</li>
+              <h4>Ce que j'ai fait</h4>
+              <ul>
+                <li>Navigation automatique multi-pages et multi-catégories</li>
+                <li>Extraction structurée (titre, prix, stock…)</li>
+                <li>Téléchargement automatique d'images</li>
+                <li>Export CSV organisé par catégorie</li>
+                <li>Architecture modulaire et réutilisable</li>
               </ul>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">
-                Technologies
-              </h4>
-              <div class="flex flex-wrap gap-2 mb-4">
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >HTML5</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >Tailwind CSS</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >TypeScript</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >HeroUI</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >Lucide</span
-                >
-                <span
-                  class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm"
-                  >dnd kit</span
-                >
+              <h4>Stack</h4>
+              <div class="tags" style="margin-top: 0.4rem">
+                <span class="tag">Python</span>
+                <span class="tag">BeautifulSoup</span>
+                <span class="tag">Requests</span>
+                <span class="tag">CSV</span>
               </div>
-
-              <h4 class="text-lg font-medium text-gray-700 mb-2">Mon rôle</h4>
-              <p class="text-gray-600 mb-4">
-                Réalisation de l'interface front-end inspirée de Trello,
-                implémentation du glisser-déposer, gestion du rendu responsive.
-                Adaptation du projet pour intégration dans mon portfolio.
-              </p>
-            </div>
-
-            <div
-              class="md:w-1/2 bg-gray-200 p-6 flex items-center justify-center"
-            >
-              <div class="text-center">
-                <img
-                  src="image_weekpal.png"
-                  alt="Capture d'écran du projet WeekPal"
-                  class="rounded-lg mb-4"
-                />
-                <i
-                  class="fas fa-clipboard-list text-6xl text-gray-500 mb-4"
-                ></i>
-                <p class="text-gray-600">Interface de gestion intuitive</p>
-                <div class="space-y-2 mt-4">
-                  <button
-                    class="w-full bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900 transition"
+              <div class="project-links">
+                <a
+                  href="https://github.com/StonksInd/py-books-to-scrape"
+                  target="_blank"
+                  class="project-link"
+                >
+                  <svg
+                    width="13"
+                    height="13"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
                   >
-                    <a
-                      href="https://github.com/3rgotech/weekpal"
-                      class="flex items-center justify-center"
-                      target="_blank"
-                    >
-                      Voir le code <i class="fab fa-github ml-2"></i>
-                    </a>
-                  </button>
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"
+                    />
+                  </svg>
+                  Code source
+                </a>
+              </div>
+            </div>
+            <div class="project-visual" style="padding: 1.5rem">
+              <div
+                style="
+                  background: var(--bg);
+                  border: 1px solid var(--border);
+                  border-radius: 6px;
+                  padding: 1.2rem;
+                  width: 100%;
+                "
+              >
+                <p
+                  style="
+                    font-family: var(--font-mono);
+                    font-size: 0.7rem;
+                    color: var(--accent);
+                    margin-bottom: 0.8rem;
+                    letter-spacing: 0.08em;
+                  "
+                >
+                  STATS
+                </p>
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.4rem;
+                    font-family: var(--font-mono);
+                    font-size: 0.78rem;
+                    color: var(--text-dim);
+                  "
+                >
+                  <span>▸ 1 000+ livres extraits</span>
+                  <span>▸ 50+ catégories</span>
+                  <span>▸ Images auto-téléchargées</span>
+                  <span>▸ Export CSV par catégorie</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- Veille technologique -->
-    <section id="veille" class="py-16 bg-white">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12 text-blue-600">
-          Veille technologique
-        </h2>
-
-        <div class="grid md:grid-cols-2 gap-8">
-          <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold mb-4">Stratégie de veille</h3>
-            <p class="text-gray-600 mb-4">
-              Je mène une veille technologique active pour rester informé des
-              dernières évolutions dans le domaine du développement web et
-              mobile.
-            </p>
-
-            <h4 class="font-medium text-gray-700 mb-2">Outils utilisés</h4>
-            <ul class="list-disc pl-5 text-gray-600 mb-4 space-y-1">
-              <li>Daily.dev</li>
-              <li>Podcast youtbe (Tech_Sama Show)</li>
-              <li>Twitter (X)</li>
-              <li>Instagram</li>
-              <li>LinkedIn</li>
-              <li>Meetup Tech (Techpaf, Afup)</li>
-            </ul>
-
-            <h4 class="font-medium text-gray-700 mb-2">Fréquence</h4>
-            <p class="text-gray-600">
-              De manière hebdomadaire, je consulte les nouvelles publications et
-              articles sur les sujets qui m'intéressent.
-            </p>
+        <!-- PROJET 9 -->
+        <div class="project-item" data-index="8">
+          <div class="project-header">
+            <div class="project-meta">
+              <span class="project-num">09</span>
+              <span class="project-name"
+                >Safe Student — Coffre-fort numérique</span
+              >
+              <div class="project-badges">
+                <span class="badge">AES-256</span>
+                <span class="badge gray">Zero-server</span>
+              </div>
+            </div>
+            <span class="project-arrow">+</span>
           </div>
-
-          <div class="bg-gray-50 p-6 rounded-lg shadow-md">
-            <h3 class="text-xl font-semibold mb-4">Sujets suivis</h3>
-
-            <div class="mb-6">
-              <h4 class="font-medium text-gray-700 mb-2">
-                1. Les nouvelles IA
-              </h4>
-              <p class="text-gray-600 mb-2">
-                Veille sur les dernières avancées en matière d'intelligence
-                artificielle, y compris les modèles de langage et les
-                applications pratiques.
+          <div class="project-body">
+            <div class="project-description">
+              <h4>Contexte</h4>
+              <p>
+                Coffre-fort numérique pour étudiants, architecture zero-server :
+                même les développeurs ne peuvent pas accéder aux documents.
               </p>
+              <h4>Ce que j'ai fait</h4>
+              <ul>
+                <li>Chiffrement AES-256-GCM côté client</li>
+                <li>Architecture 100% navigateur (IndexedDB)</li>
+                <li>Design UX/UI et interface complète</li>
+                <li>Coordination d'une équipe de 4 développeurs</li>
+              </ul>
+              <h4>Stack</h4>
+              <div class="tags" style="margin-top: 0.4rem">
+                <span class="tag">HTML5 / Tailwind</span>
+                <span class="tag">JavaScript ES6</span>
+                <span class="tag">Web Crypto API</span>
+                <span class="tag">IndexedDB</span>
+                <span class="tag">JSZip</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link">
+                  <svg
+                    width="13"
+                    height="13"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"
+                    />
+                  </svg>
+                  Code source
+                </a>
+              </div>
             </div>
-
-            <div>
-              <h4 class="font-medium text-gray-700 mb-2">2. Le spatial</h4>
-              <p class="text-gray-600 mb-2">
-                Suivi des nouvelles technologies et missions spatiales, y
-                compris les avancées en matière de voyages interplanétaires et
-                d'exploration spatiale.
-              </p>
+            <div class="project-visual">
+              <img
+                src="image_safeStudent.png"
+                alt="Safe Student"
+                onerror="
+                  this.parentElement.innerHTML =
+                    '<div class=\'no-img\'><svg width=\'40\' height=\'40\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1\' viewBox=\'0 0 24 24\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\'/><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'/><path d=\'m21 15-5-5L5 21\'/></svg><span>image_safeStudent.png</span></div>'
+                "
+              />
             </div>
+          </div>
+        </div>
 
-            <div>
-              <h4 class="font-medium text-gray-700 mb-2">3. Le Hardware</h4>
-              <p class="text-gray-600 mb-2">
-                Suivi des nouvelles tendances en matière de matériel
-                informatique, y compris les composants, les périphériques et les
-                innovations technologiques.
+        <!-- PROJET 10 -->
+        <div class="project-item" data-index="9">
+          <div class="project-header">
+            <div class="project-meta">
+              <span class="project-num">10</span>
+              <span class="project-name"
+                >WeekPal — Planificateur de semaine</span
+              >
+              <div class="project-badges">
+                <span class="badge">TypeScript</span>
+                <span class="badge blue">dnd kit</span>
+                <span class="badge gray">HeroUI</span>
+              </div>
+            </div>
+            <span class="project-arrow">+</span>
+          </div>
+          <div class="project-body">
+            <div class="project-description">
+              <h4>Contexte</h4>
+              <p>
+                Application web de planification visuelle de semaine, inspirée
+                de Trello, avec glisser-déposer.
               </p>
+              <h4>Ce que j'ai fait</h4>
+              <ul>
+                <li>Interface Kanban par jour de la semaine</li>
+                <li>Glisser-déposer avec dnd kit</li>
+                <li>Sauvegarde des modifications en temps réel</li>
+                <li>Rendu responsive complet</li>
+              </ul>
+              <h4>Stack</h4>
+              <div class="tags" style="margin-top: 0.4rem">
+                <span class="tag">TypeScript</span>
+                <span class="tag">Tailwind CSS</span>
+                <span class="tag">HeroUI</span>
+                <span class="tag">dnd kit</span>
+                <span class="tag">Lucide</span>
+              </div>
+              <div class="project-links">
+                <a
+                  href="https://github.com/3rgotech/weekpal"
+                  target="_blank"
+                  class="project-link"
+                >
+                  <svg
+                    width="13"
+                    height="13"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"
+                    />
+                  </svg>
+                  Code source
+                </a>
+              </div>
+            </div>
+            <div class="project-visual">
+              <img
+                src="image_weekpal.png"
+                alt="WeekPal"
+                onerror="
+                  this.parentElement.innerHTML =
+                    '<div class=\'no-img\'><svg width=\'40\' height=\'40\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1\' viewBox=\'0 0 24 24\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\'/><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'/><path d=\'m21 15-5-5L5 21\'/></svg><span>image_weekpal.png</span></div>'
+                "
+              />
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Communication & identité numérique -->
-    <section id="contact" class="py-16 bg-blue-600 text-white">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12">
-          Communication & identité numérique
-        </h2>
+    <div class="divider"></div>
 
-        <div class="grid md:grid-cols-2 gap-8">
-          <div>
-            <h3 class="text-xl font-semibold mb-4">
-              Mes réseaux professionnels
-            </h3>
+    <!-- ── E6 / STAGE ── -->
+    <section id="stage">
+      <p class="section-label reveal">03 — Épreuve E6</p>
+      <h2 class="section-title reveal">
+        Réalisations <em>professionnelles</em>
+      </h2>
+      <div class="stage-grid reveal">
+        <div class="stage-card">
+          <p class="stage-number">Réalisation n°1 · 26/01/2026</p>
+          <h3 class="stage-title">
+            Release Notes — Affichage lors des montées de version
+          </h3>
+          <p class="stage-org">Cotranet · Stage 2025–2026 · Seul</p>
+          <div class="stage-body">
+            <p>
+              Mise en place d'un système qui vérifie, à la connexion, si
+              l'utilisateur a déjà consulté la dernière version de
+              l'application. Si ce n'est pas le cas, une modale affiche les
+              notes de version en Markdown, converties en HTML. La consultation
+              est ensuite enregistrée en base.
+            </p>
+            <p>
+              <strong>Back-end Java</strong> : Controller REST, Service avec
+              lecture de fichiers Markdown et fallback linguistique, DTO
+              structuré en Map&lt;String, String&gt;.
+              <strong>Front-end Vue.js</strong> : service api.ts, typage
+              TypeScript du DTO, modale de rendu Markdown avec sélection
+              automatique de langue.
+            </p>
+          </div>
+          <div class="stage-comps">
+            <span class="stage-comp"
+              >Concevoir et développer une solution applicative</span
+            >
+            <span class="stage-comp"
+              >Assurer la maintenance corrective ou évolutive</span
+            >
+            <span class="stage-comp">Gérer les données</span>
+          </div>
+        </div>
 
-            <div class="space-y-4">
-              <a
-                href="https://www.linkedin.com/in/nathana%C3%ABl-lejuste/"
-                target="_blank"
-                class="flex items-center p-3 bg-blue-700 rounded-lg hover:bg-blue-800 transition"
-              >
-                <i class="fab fa-linkedin text-2xl mr-3"></i>
-                <div>
-                  <p class="font-medium">LinkedIn</p>
-                  <p class="text-sm text-blue-200">
-                    linkedin.com/in/nathanaël-lejuste
-                  </p>
-                </div>
-              </a>
+        <div class="stage-card">
+          <p class="stage-number">Réalisation n°2 · 01/11/2025</p>
+          <h3 class="stage-title">
+            Documentation API via Swagger (Springdoc OpenAPI)
+          </h3>
+          <p class="stage-org">Cotranet · Stage 2025–2026 · Seul</p>
+          <div class="stage-body">
+            <p>
+              Intégration de Swagger (Springdoc OpenAPI) dans le back-end
+              Java/Spring Boot pour générer automatiquement une documentation
+              d'API REST interactive, toujours synchronisée avec le code source.
+            </p>
+            <p>
+              La documentation est exposée via Swagger-UI puis intégrée dans
+              l'application Vue.js dans un composant dédié (iframe), permettant
+              aux développeurs de consulter et tester les endpoints directement
+              depuis l'interface.
+            </p>
+          </div>
+          <div class="stage-comps">
+            <span class="stage-comp"
+              >Concevoir et développer une solution applicative</span
+            >
+            <span class="stage-comp"
+              >Assurer la maintenance corrective ou évolutive</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
 
-              <a
-                href="https://github.com/StonksInd"
-                target="_blank"
-                class="flex items-center p-3 bg-gray-800 rounded-lg hover:bg-gray-900 transition"
-              >
-                <i class="fab fa-github text-2xl mr-3"></i>
-                <div>
-                  <p class="font-medium">GitHub</p>
-                  <p class="text-sm text-gray-400">github.com/StonksInd</p>
-                </div>
-              </a>
+    <div class="divider"></div>
 
-              <a
-                href="mailto:nathanael.lejuste@gmail.com"
-                target="_blank"
-                class="flex items-center p-3 bg-blue-400 rounded-lg hover:bg-blue-500 transition"
-              >
-                <i class="fas fa-envelope text-2xl mr-3"></i>
-                <div>
-                  <p class="font-medium">Email</p>
-                  <p class="text-sm text-blue-100">
-                    nathanael.lejuste@gmail.com
-                  </p>
-                </div>
-              </a>
+    <!-- ── VEILLE ── -->
+    <section id="veille">
+      <p class="section-label reveal">04 — Veille technologique</p>
+      <h2 class="section-title reveal">Ce que je <em>suis</em></h2>
+      <div class="veille-grid reveal">
+        <div class="veille-card">
+          <h3>Sujets suivis</h3>
+          <div class="veille-item">
+            <h4>Intelligence artificielle</h4>
+            <p>
+              Modèles de langage, applications pratiques, évolution des outils
+              IA au quotidien du développeur. Je m'intéresse en particulier aux
+              avancées en informatique quantique et leurs interactions futures
+              avec l'IA.
+            </p>
+          </div>
+          <div class="veille-item">
+            <h4>Le spatial</h4>
+            <p>
+              Missions habitées, exploration planétaire, nouvelles architectures
+              de lanceurs. Un domaine qui pousse les limites de l'ingénierie
+              système.
+            </p>
+          </div>
+          <div class="veille-item">
+            <h4>Hardware & composants</h4>
+            <p>
+              Nouvelles architectures de processeurs, GPU, composants innovants
+              — le côté physique du numérique qui fascine autant que le
+              logiciel.
+            </p>
+          </div>
+        </div>
+
+        <div class="veille-card">
+          <h3>Comment je me tiens informé</h3>
+          <div class="veille-item">
+            <h4>Sources régulières</h4>
+            <div class="tools-list">
+              <span class="tool-chip">daily.dev</span>
+              <span class="tool-chip">Twitter / X</span>
+              <span class="tool-chip">LinkedIn</span>
+              <span class="tool-chip">Instagram tech</span>
+              <span class="tool-chip">Tech_Sama Show</span>
+              <span class="tool-chip">Meetup Techpaf</span>
+              <span class="tool-chip">AFUP</span>
             </div>
           </div>
-
-          <div>
-            <h3 class="text-xl font-semibold mb-4">
-              Pratiques sur les réseaux
-            </h3>
-            <p class="mb-4">
-              Je maintiens une présence professionnelle sur les réseaux, en
-              partageant des articles techniques, en participant à des
-              discussions et en suivant des influenceurs du domaine.
+          <div class="veille-item" style="margin-top: 1.2rem">
+            <h4>Rythme</h4>
+            <p>
+              Veille hebdomadaire sur les nouvelles publications, articles de
+              fond, et discussions techniques. Participation occasionnelle à des
+              meetups tech locaux.
+            </p>
+          </div>
+          <div class="veille-item" style="margin-top: 1.2rem">
+            <h4>Mise en pratique</h4>
+            <p>
+              <strong
+                >[Donnez ici un exemple concret : ex. "Suite à ma veille sur
+                Drizzle ORM, je l'ai intégré dans AnimeCollect à la place de
+                SQLite brut." ou "J'ai découvert dnd kit sur daily.dev et je
+                l'ai utilisé dans WeekPal."]</strong
+              >
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-      <div class="container mx-auto px-4 text-center">
-        <p class="mb-4">© 2025 Nathanaël LEJUSTE - Portfolio</p>
-        <div class="flex justify-center space-x-4">
+    <div class="divider"></div>
+
+    <!-- ── CONTACT ── -->
+    <section id="contact">
+      <p class="section-label reveal">05 — Contact</p>
+      <div class="contact-inner reveal">
+        <h2 class="section-title">Prenons <em>contact</em></h2>
+        <p>
+          Disponible pour discuter d'un projet, d'une alternance ou simplement
+          pour échanger. La meilleure façon de me joindre reste LinkedIn ou
+          GitHub.
+        </p>
+        <div class="contact-links">
+          <a href="mailto:nathanael.lejuste@gmail.com" class="contact-link">
+            <div class="contact-link-icon em">✉</div>
+            <div class="contact-link-text">
+              <strong>Email</strong>
+              <span>nathanael.lejuste@gmail.com</span>
+            </div>
+          </a>
           <a
             href="https://www.linkedin.com/in/nathana%C3%ABl-lejuste/"
             target="_blank"
-            class="hover:text-blue-400 transition"
+            rel="noopener"
+            class="contact-link"
           >
-            <i class="fab fa-linkedin text-xl"></i>
+            <div class="contact-link-icon li">in</div>
+            <div class="contact-link-text">
+              <strong>LinkedIn</strong>
+              <span>linkedin.com/in/nathanaël-lejuste</span>
+            </div>
           </a>
           <a
             href="https://github.com/StonksInd"
             target="_blank"
-            class="hover:text-gray-300 transition"
+            rel="noopener"
+            class="contact-link"
           >
-            <i class="fab fa-github text-xl"></i>
-          </a>
-          <a
-            href="mailto:nathanael.lejuste@gmail.com"
-            target="_blank"
-            class="hover:text-blue-300 transition"
-          >
-            <i class="fas fa-envelope text-xl"></i>
+            <div class="contact-link-icon gh">
+              <svg
+                width="18"
+                height="18"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.258.82-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"
+                />
+              </svg>
+            </div>
+            <div class="contact-link-text">
+              <strong>GitHub</strong>
+              <span>github.com/StonksInd</span>
+            </div>
           </a>
         </div>
       </div>
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <footer>
+      <p>© 2026 Nathanaël LEJUSTE</p>
+      <div class="footer-links">
+        <a href="#" id="openCGU">CGU</a>
+        <a href="#" id="openMentions">Mentions légales</a>
+      </div>
     </footer>
 
-    <script>
-      // Menu mobile
-      const menuBtn = document.getElementById("menu-btn");
-      const mobileMenu = document.getElementById("mobile-menu");
+    <!-- ── MODAL CGU ── -->
+    <div class="modal-overlay" id="modalCGU">
+      <div class="modal">
+        <button class="modal-close" data-close="modalCGU">✕</button>
+        <h2>Conditions Générales d'Utilisation</h2>
+        <p><em>Dernière mise à jour : avril 2026</em></p>
 
+        <h3>1. Objet</h3>
+        <p>
+          Les présentes Conditions Générales d'Utilisation (CGU) régissent
+          l'accès et l'utilisation du site portfolio de Nathanaël LEJUSTE,
+          accessible à l'adresse de ce fichier. En accédant à ce site, vous
+          acceptez sans réserve les présentes CGU.
+        </p>
+
+        <h3>2. Accès au site</h3>
+        <p>
+          Le site est accessible librement et gratuitement. Nathanaël LEJUSTE se
+          réserve le droit de modifier, interrompre ou fermer l'accès au site à
+          tout moment, sans préavis.
+        </p>
+
+        <h3>3. Contenu du site</h3>
+        <p>
+          Ce portfolio présente des projets personnels et scolaires réalisés par
+          Nathanaël LEJUSTE. Les informations sont fournies à titre indicatif et
+          peuvent être modifiées à tout moment. Certains projets présentés ont
+          été réalisés dans un cadre professionnel ou scolaire ; leur contenu
+          est reproduit à des fins de présentation uniquement.
+        </p>
+
+        <h3>4. Propriété intellectuelle</h3>
+        <p>
+          L'ensemble des éléments du site (textes, images, code, design) est la
+          propriété de Nathanaël LEJUSTE, sauf mention contraire. Toute
+          reproduction, même partielle, est interdite sans autorisation
+          préalable.
+        </p>
+
+        <h3>5. Liens externes</h3>
+        <p>
+          Le site contient des liens vers GitHub, LinkedIn et d'autres services
+          tiers. Nathanaël LEJUSTE n'est pas responsable du contenu de ces sites
+          externes ni de leurs pratiques en matière de données personnelles.
+        </p>
+
+        <h3>6. Données personnelles</h3>
+        <p>
+          Ce site ne collecte aucune donnée personnelle, ne dépose aucun cookie
+          de traçage et n'utilise aucun outil d'analyse comportementale.
+          L'adresse email visible sur ce site est fournie à des fins de contact
+          professionnel uniquement.
+        </p>
+
+        <h3>7. Limitation de responsabilité</h3>
+        <p>
+          Nathanaël LEJUSTE ne saurait être tenu responsable des dommages
+          directs ou indirects résultant de l'accès ou de l'utilisation du site.
+        </p>
+
+        <h3>8. Droit applicable</h3>
+        <p>
+          Les présentes CGU sont soumises au droit français. Tout litige sera
+          porté devant les juridictions compétentes de France.
+        </p>
+      </div>
+    </div>
+
+    <!-- ── MODAL MENTIONS ── -->
+    <div class="modal-overlay" id="modalMentions">
+      <div class="modal">
+        <button class="modal-close" data-close="modalMentions">✕</button>
+        <h2>Mentions légales</h2>
+        <p>
+          <em
+            >Conformément à la loi n°2004-575 du 21 juin 2004 pour la confiance
+            dans l'économie numérique.</em
+          >
+        </p>
+
+        <h3>Éditeur du site</h3>
+        <p>
+          <strong>Nathanaël LEJUSTE</strong><br />
+          Étudiant en BTS SIO SLAM — EPSI<br />
+          Contact :
+          <a
+            href="mailto:nathanael.lejuste@gmail.com"
+            style="color: var(--accent)"
+            >nathanael.lejuste@gmail.com</a
+          >
+        </p>
+
+        <h3>Hébergement</h3>
+        <p>
+          <strong
+            >[Indiquez ici votre hébergeur : ex. GitHub Pages, Netlify, OVH,
+            etc.]</strong
+          ><br />
+          Adresse : [adresse de l'hébergeur]<br />
+          Site web : [url de l'hébergeur]
+        </p>
+
+        <h3>Responsable de publication</h3>
+        <p>Nathanaël LEJUSTE — nathanael.lejuste@gmail.com</p>
+
+        <h3>Propriété intellectuelle</h3>
+        <p>
+          Tous les contenus présents sur ce site (textes, images, codes source)
+          sont la propriété exclusive de Nathanaël LEJUSTE, à l'exception des
+          projets réalisés dans un cadre professionnel qui restent soumis aux
+          droits de leurs organisations respectives. Toute reproduction est
+          interdite sans accord préalable.
+        </p>
+
+        <h3>Données personnelles</h3>
+        <p>
+          Ce site ne collecte aucune donnée personnelle. Aucun cookie n'est
+          déposé sur votre terminal. Conformément au RGPD et à la loi
+          Informatique et Libertés, vous disposez d'un droit d'accès, de
+          rectification et de suppression pour toute donnée vous concernant.
+          Contact : nathanael.lejuste@gmail.com
+        </p>
+
+        <h3>Crédits</h3>
+        <p>
+          Fonts : Syne et DM Mono via Google Fonts. Design et développement :
+          Nathanaël LEJUSTE.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      // ── MENU MOBILE ──
+      const menuBtn = document.getElementById("menuBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
       menuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
+        mobileMenu.classList.toggle("open");
+      });
+      mobileMenu.querySelectorAll("a").forEach((a) => {
+        a.addEventListener("click", () => mobileMenu.classList.remove("open"));
       });
 
-      // Smooth scrolling
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
+      // ── ACCORDION PROJETS ──
+      document.querySelectorAll(".project-item").forEach((item) => {
+        item.querySelector(".project-header").addEventListener("click", () => {
+          const isOpen = item.classList.contains("open");
+          document
+            .querySelectorAll(".project-item.open")
+            .forEach((i) => i.classList.remove("open"));
+          if (!isOpen) item.classList.add("open");
+        });
+      });
 
-          const targetId = this.getAttribute("href");
-          const targetElement = document.querySelector(targetId);
+      // ── SCROLL REVEAL ──
+      const revealEls = document.querySelectorAll(".reveal");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add("visible");
+              observer.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+      revealEls.forEach((el) => observer.observe(el));
 
-          if (targetElement) {
-            targetElement.scrollIntoView({
-              behavior: "smooth",
-            });
+      // ── MODALS ──
+      function openModal(id) {
+        document.getElementById(id).classList.add("open");
+        document.body.style.overflow = "hidden";
+      }
+      function closeModal(id) {
+        document.getElementById(id).classList.remove("open");
+        document.body.style.overflow = "";
+      }
 
-            // Fermer le menu mobile si ouvert
-            mobileMenu.classList.add("hidden");
+      document.getElementById("openCGU").addEventListener("click", (e) => {
+        e.preventDefault();
+        openModal("modalCGU");
+      });
+      document.getElementById("openMentions").addEventListener("click", (e) => {
+        e.preventDefault();
+        openModal("modalMentions");
+      });
+
+      document.querySelectorAll(".modal-close").forEach((btn) => {
+        btn.addEventListener("click", () => closeModal(btn.dataset.close));
+      });
+      document.querySelectorAll(".modal-overlay").forEach((overlay) => {
+        overlay.addEventListener("click", (e) => {
+          if (e.target === overlay) closeModal(overlay.id);
+        });
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape")
+          document
+            .querySelectorAll(".modal-overlay.open")
+            .forEach((m) => closeModal(m.id));
+      });
+
+      // ── SMOOTH SCROLL ──
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", function (e) {
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: "smooth" });
           }
         });
       });
