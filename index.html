@@ -1318,6 +1318,172 @@
             </div>
           </div>
         </div>
+
+        <!-- PROJET : Release Notes (BTS SIO - Réalisation 1) -->
+        <div class="project-item" data-index="8">
+          <div class="project-header">
+            <div class="project-meta">
+              <span class="project-num">09</span>
+              <span class="project-name"
+                >Release Notes — Affichage lors des montées de version</span
+              >
+              <div class="project-badges">
+                <span class="badge">Java</span>
+                <span class="badge blue">Vue.js</span>
+                <span class="badge gray">SQL</span>
+                <span class="badge">Spring Boot</span>
+              </div>
+            </div>
+            <span class="project-arrow">+</span>
+          </div>
+          <div class="project-body">
+            <div class="project-description">
+              <h4>Contexte</h4>
+              <p>
+                Réalisation professionnelle chez Cotranet (2025-2026).
+                Développement d'un système d'affichage automatique des notes de
+                version lors de la connexion, intégré à une application
+                existante.
+              </p>
+              <h4>Ce que j'ai fait</h4>
+              <ul>
+                <li>
+                  Backend Java (Spring Boot) avec architecture en couches :
+                  Controller, Service et DTO
+                </li>
+                <li>
+                  Endpoint REST exposant les notes de version avec fallback
+                  linguistique
+                </li>
+                <li>
+                  Lecture dynamique de fichiers Markdown selon la version et la
+                  langue demandée
+                </li>
+                <li>
+                  Structuration des données via un DTO (Map&lt;String,
+                  String&gt;) par langue
+                </li>
+                <li>
+                  Frontend Vue.js avec un service api.ts centralisant les appels
+                  HTTP
+                </li>
+                <li>
+                  Modal dédiée convertissant le Markdown en HTML avec sélection
+                  automatique de la langue
+                </li>
+                <li>
+                  Base de données SQL pour enregistrer les versions consultées
+                  par utilisateur
+                </li>
+                <li>
+                  Suivi du projet via tickets Mantis, maquettes Figma et tableau
+                  Trello
+                </li>
+              </ul>
+              <h4>Stack</h4>
+              <div class="tags" style="margin-top: 0.4rem">
+                <span class="tag">Java</span>
+                <span class="tag">Spring Boot</span>
+                <span class="tag">Vue.js</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">SQL</span>
+                <span class="tag">Markdown</span>
+                <span class="tag">REST API</span>
+                <span class="tag">Figma</span>
+                <span class="tag">Mantis</span>
+              </div>
+            </div>
+            <div class="project-visual">
+              <img
+                src="image_releasenotes.png"
+                alt="Release Notes"
+                onerror="
+                  this.parentElement.innerHTML =
+                    '<div class=\'no-img\'><svg width=\'40\' height=\'40\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1\' viewBox=\'0 0 24 24\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\'/><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'/><path d=\'m21 15-5-5L5 21\'/></svg><span>image_releasenotes.png</span></div>'
+                "
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJET : Documentation API Swagger (BTS SIO - Réalisation 2) -->
+        <div class="project-item" data-index="7">
+          <div class="project-header">
+            <div class="project-meta">
+              <span class="project-num">08</span>
+              <span class="project-name"
+                >Swagger — Documentation API automatisée</span
+              >
+              <div class="project-badges">
+                <span class="badge">Java</span>
+                <span class="badge blue">Spring Boot</span>
+                <span class="badge gray">Vue.js</span>
+                <span class="badge">OpenAPI</span>
+              </div>
+            </div>
+            <span class="project-arrow">+</span>
+          </div>
+          <div class="project-body">
+            <div class="project-description">
+              <h4>Contexte</h4>
+              <p>
+                Réalisation professionnelle chez Cotranet (2025-2026). Mise en
+                place d'une documentation d'API REST interactive et automatisée
+                via Swagger (Springdoc OpenAPI), intégrée directement dans
+                l'application Vue.js.
+              </p>
+              <h4>Ce que j'ai fait</h4>
+              <ul>
+                <li>
+                  Intégration de Springdoc OpenAPI au backend Java/Spring Boot
+                  pour la génération automatique de la spécification OpenAPI
+                  JSON
+                </li>
+                <li>
+                  Configuration de Swagger-UI pour exposer une interface
+                  interactive de consultation et de test des endpoints REST
+                </li>
+                <li>
+                  Création d'un composant Vue.js (SwaggerViewer.vue) intégrant
+                  Swagger-UI via un iframe
+                </li>
+                <li>
+                  Documentation toujours synchronisée avec le code source, sans
+                  maintenance manuelle
+                </li>
+                <li>
+                  Organisation du dépôt Git en branches pour le développement
+                  collaboratif
+                </li>
+                <li>
+                  Documentation complémentaire accessible en Markdown et via
+                  Swagger directement dans le dépôt
+                </li>
+              </ul>
+              <h4>Stack</h4>
+              <div class="tags" style="margin-top: 0.4rem">
+                <span class="tag">Java</span>
+                <span class="tag">Spring Boot</span>
+                <span class="tag">Springdoc OpenAPI</span>
+                <span class="tag">Swagger-UI</span>
+                <span class="tag">Vue.js</span>
+                <span class="tag">OpenAPI JSON</span>
+                <span class="tag">REST API</span>
+                <span class="tag">Git</span>
+              </div>
+            </div>
+            <div class="project-visual">
+              <img
+                src="image_swagger.png"
+                alt="Swagger API Docs"
+                onerror="
+                  this.parentElement.innerHTML =
+                    '<div class=\'no-img\'><svg width=\'40\' height=\'40\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'1\' viewBox=\'0 0 24 24\'><rect x=\'3\' y=\'3\' width=\'18\' height=\'18\' rx=\'2\'/><circle cx=\'8.5\' cy=\'8.5\' r=\'1.5\'/><path d=\'m21 15-5-5L5 21\'/></svg><span>image_swagger.png</span></div>'
+                "
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
